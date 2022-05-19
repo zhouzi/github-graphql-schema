@@ -50,7 +50,8 @@
           "typescript"
         ],
         "config": {
-          "enumsAsTypes": true
+          "enumsAsTypes": true,
+          "useImplementingTypes": true
         }
       }
     }
