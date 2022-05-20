@@ -1,9 +1,9 @@
 # How to contribute
 
 Support and contributions from the open source community are essential for keeping
-the `graphql-schema` up to date and always improving! There are a few guidelines that we need
+the `github-graphql-schema` up to date and always improving! There are a few guidelines that we need
 contributors to follow to keep the project consistent, as well as allow us to keep
-maintaining `graphql-schema` in a reasonable amount of time.
+maintaining `github-graphql-schema` in a reasonable amount of time.
 
 Please note that this project is released with a [Contributor Code of Conduct][coc].
 By participating in this project you agree to abide by its terms.
@@ -14,7 +14,7 @@ By participating in this project you agree to abide by its terms.
 
 Before you create a new Issue:
 
-- Check the [Issues](https://github.com/octokit/graphql-schema/issues) on Github to ensure one doesn't already exist.
+- Check the [Issues](https://github.com/zhouzi/github-graphql-schema/issues) on Github to ensure one doesn't already exist.
 - Clearly describe the issue, including the steps to reproduce the issue.
 - Please include links to the corresponding github documentation.
 
@@ -27,7 +27,7 @@ Before you create a new Issue:
 ## Submitting the Pull Request
 
 - Push your changes to your topic branch on your fork of the repo.
-- Submit a pull request from your topic branch to the master branch on the `graphql-schema` repository.
+- Submit a pull request from your topic branch to the master branch on the `github-graphql-schema` repository.
 - Be sure to tag any issues your pull request is taking care of / contributing to.
 - Adding "Closes #123" to a pull request description will auto close the issue once the pull request is merged in.
 

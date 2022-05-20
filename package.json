@@ -38,7 +38,7 @@
     "semantic-release": "^18.0.0",
     "typescript": "^4.0.2"
   },
-  "repository": "github:zhouzi/graphql-schema",
+  "repository": "github:zhouzi/github-graphql-schema",
   "types": "index.d.ts",
   "sideEffects": false,
   "codegen": {

@@ -1,8 +1,8 @@
-# graphql-schema
+# github-graphql-schema
 
 > GitHub’s GraphQL Schema with validation. Automatically updated.
 
-![Test](https://github.com/zhouzi/graphql-schema/workflows/Test/badge.svg)
+![Test](https://github.com/zhouzi/github-graphql-schema/workflows/Test/badge.svg)
 
 > ⚠️ This is a fork of [octokit/graphql-schema](https://github.com/octokit/graphql-schema) with automatic update enabled and fixes integrated. [Compare the fork with the origin to browse the differences.](https://github.com/octokit/graphql-schema/compare/master...zhouzi:master)
 
@@ -62,8 +62,8 @@ const { repository } = await graphql<{ repository: Repository }>(
 ## Local setup
 
 ```
-git clone https://github.com/zhouzi/graphql-schema.git
-cd graphql-schema
+git clone https://github.com/zhouzi/github-graphql-schema.git
+cd github-graphql-schema
 npm install
 npm test
 ```
