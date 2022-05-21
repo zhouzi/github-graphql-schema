@@ -59,6 +59,62 @@ const { repository } = await graphql<{ repository: Repository }>(
 );
 ```
 
+### CLI
+
+This package comes with a CLI that can be used to generate types based on GitHub's GraphQL schema.
+
+#### Generate types for your operations (queries, mutations, subscriptions)
+
+```sh
+# don't forget the quotes when using a glob
+github-graphql-schema operations -i './src/**/*.ts'
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>Your code</th>
+      <th>Generated types</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <pre>
+const GetReposQuery = gql`
+  query GetRepos {
+    viewer {
+      repositories {
+        nodes {
+          nameWithOwner
+        }
+      }
+    }
+  }
+`;
+        </pre>
+      </td>
+      <td>
+        <pre>
+export type GetReposQuery = {
+  __typename?: "Query";
+  viewer: {
+    __typename?: "User";
+    repositories: {
+      __typename?: "RepositoryConnection";
+      nodes?: Array<{
+        __typename?: "Repository";
+        nameWithOwner: string;
+      } | null> | null;
+    };
+  };
+};
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## Local setup
 
 ```
