@@ -6,6 +6,9 @@
   },
   "description": "GitHub’s GraphQL Schema with validation. Automatically updated.",
   "main": "index.js",
+  "bin": {
+    "github-graphql-schema": "./bin/bin.js"
+  },
   "scripts": {
     "lint": "prettier --check '{bin,lib,test}/**/*.{js,ts}' *.md package.json",
     "lint:fix": "prettier --write '{bin,lib,test}/**/*.{js,ts}' *.md package.json",
@@ -25,12 +28,15 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "dependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/near-operation-file-preset": "^2.2.12",
+    "@graphql-codegen/typescript": "^2.4.11",
+    "@graphql-codegen/typescript-operations": "^2.4.0",
+    "commander": "^9.2.0",
     "graphql": "^16.5.0",
     "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.6.2",
-    "@graphql-codegen/typescript": "^2.4.11",
     "@octokit/graphql": "^4.8.0",
     "dotenv": "^16.0.1",
     "execa": "^6.1.0",
