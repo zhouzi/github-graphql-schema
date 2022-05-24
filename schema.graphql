@@ -1685,7 +1685,7 @@ type Bot implements Actor & Node & UniformResourceLocatable {
 """
 Types which can be actors for `BranchActorAllowance` objects.
 """
-union BranchActorAllowanceActor = Team | User
+union BranchActorAllowanceActor = App | Team | User
 
 """
 A branch protection rule.
@@ -2054,16 +2054,16 @@ type BranchProtectionRuleEdge {
 }
 
 """
-A team or user who has the ability to bypass a force push requirement on a protected branch.
+A user, team, or app who has the ability to bypass a force push requirement on a protected branch.
 """
 type BypassForcePushAllowance implements Node {
   """
-  The actor that can dismiss.
+  The actor that can force push.
   """
   actor: BranchActorAllowanceActor
 
   """
-  Identifies the branch protection rule associated with the allowed user or team.
+  Identifies the branch protection rule associated with the allowed user, team, or app.
   """
   branchProtectionRule: BranchProtectionRule
   id: ID!
@@ -2110,16 +2110,16 @@ type BypassForcePushAllowanceEdge {
 }
 
 """
-A team or user who has the ability to bypass a pull request requirement on a protected branch.
+A user, team, or app who has the ability to bypass a pull request requirement on a protected branch.
 """
 type BypassPullRequestAllowance implements Node {
   """
-  The actor that can dismiss.
+  The actor that can bypass.
   """
   actor: BranchActorAllowanceActor
 
   """
-  Identifies the branch protection rule associated with the allowed user or team.
+  Identifies the branch protection rule associated with the allowed user, team, or app.
   """
   branchProtectionRule: BranchProtectionRule
   id: ID!
@@ -5546,12 +5546,12 @@ input CreateBranchProtectionRuleInput {
   blocksCreations: Boolean
 
   """
-  A list of User or Team IDs allowed to bypass force push targeting matching branches.
+  A list of User, Team, or App IDs allowed to bypass force push targeting matching branches.
   """
   bypassForcePushActorIds: [ID!]
 
   """
-  A list of User or Team IDs allowed to bypass pull requests targeting matching branches.
+  A list of User, Team, or App IDs allowed to bypass pull requests targeting matching branches.
   """
   bypassPullRequestActorIds: [ID!]
 
@@ -5646,7 +5646,7 @@ input CreateBranchProtectionRuleInput {
   restrictsReviewDismissals: Boolean
 
   """
-  A list of User or Team IDs allowed to dismiss reviews on pull requests targeting matching branches.
+  A list of User, Team, or App IDs allowed to dismiss reviews on pull requests targeting matching branches.
   """
   reviewDismissalActorIds: [ID!]
 }
@@ -30319,7 +30319,7 @@ type Push implements Node {
 }
 
 """
-A team, user or app who has the ability to push to a protected branch.
+A team, user, or app who has the ability to push to a protected branch.
 """
 type PushAllowance implements Node {
   """
@@ -30328,7 +30328,7 @@ type PushAllowance implements Node {
   actor: PushAllowanceActor
 
   """
-  Identifies the branch protection rule associated with the allowed user or team.
+  Identifies the branch protection rule associated with the allowed user, team, or app.
   """
   branchProtectionRule: BranchProtectionRule
   id: ID!
@@ -38043,7 +38043,7 @@ type RestrictedContribution implements Contribution {
 }
 
 """
-A team or user who has the ability to dismiss a review on a protected branch.
+A user, team, or app who has the ability to dismiss a review on a protected branch.
 """
 type ReviewDismissalAllowance implements Node {
   """
@@ -38052,7 +38052,7 @@ type ReviewDismissalAllowance implements Node {
   actor: ReviewDismissalAllowanceActor
 
   """
-  Identifies the branch protection rule associated with the allowed user or team.
+  Identifies the branch protection rule associated with the allowed user, team, or app.
   """
   branchProtectionRule: BranchProtectionRule
   id: ID!
@@ -38061,7 +38061,7 @@ type ReviewDismissalAllowance implements Node {
 """
 Types that can be an actor.
 """
-union ReviewDismissalAllowanceActor = Team | User
+union ReviewDismissalAllowanceActor = App | Team | User
 
 """
 The connection type for ReviewDismissalAllowance.
@@ -44157,12 +44157,12 @@ input UpdateBranchProtectionRuleInput {
   branchProtectionRuleId: ID!
 
   """
-  A list of User or Team IDs allowed to bypass force push targeting matching branches.
+  A list of User, Team, or App IDs allowed to bypass force push targeting matching branches.
   """
   bypassForcePushActorIds: [ID!]
 
   """
-  A list of User or Team IDs allowed to bypass pull requests targeting matching branches.
+  A list of User, Team, or App IDs allowed to bypass pull requests targeting matching branches.
   """
   bypassPullRequestActorIds: [ID!]
 
@@ -44252,7 +44252,7 @@ input UpdateBranchProtectionRuleInput {
   restrictsReviewDismissals: Boolean
 
   """
-  A list of User or Team IDs allowed to dismiss reviews on pull requests targeting matching branches.
+  A list of User, Team, or App IDs allowed to dismiss reviews on pull requests targeting matching branches.
   """
   reviewDismissalActorIds: [ID!]
 }
