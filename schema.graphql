@@ -12442,6 +12442,26 @@ type ExternalIdentity implements Node {
 }
 
 """
+An attribute for the External Identity attributes collection
+"""
+type ExternalIdentityAttribute {
+  """
+  The attribute metadata as JSON
+  """
+  metadata: String
+
+  """
+  The attribute name
+  """
+  name: String!
+
+  """
+  The attribute value
+  """
+  value: String!
+}
+
+"""
 The connection type for ExternalIdentity.
 """
 type ExternalIdentityConnection {
@@ -12485,6 +12505,11 @@ type ExternalIdentityEdge {
 SAML attributes for the External Identity
 """
 type ExternalIdentitySamlAttributes {
+  """
+  SAML Identity attributes
+  """
+  attributes: [ExternalIdentityAttribute!]!
+
   """
   The emails associated with the SAML identity
   """
