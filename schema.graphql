@@ -1300,12 +1300,14 @@ type AutoMergeRequest {
   authorEmail: String
 
   """
-  The commit message of the auto-merge request.
+  The commit message of the auto-merge request. If a merge queue is required by
+  the base branch, this value will be set by the merge queue when merging.
   """
   commitBody: String
 
   """
-  The commit title of the auto-merge request.
+  The commit title of the auto-merge request. If a merge queue is required by
+  the base branch, this value will be set by the merge queue when merging
   """
   commitHeadline: String
 
@@ -1320,7 +1322,8 @@ type AutoMergeRequest {
   enabledBy: Actor
 
   """
-  The merge method of the auto-merge request.
+  The merge method of the auto-merge request. If a merge queue is required by
+  the base branch, this value will be set by the merge queue when merging.
   """
   mergeMethod: PullRequestMergeMethod!
 
