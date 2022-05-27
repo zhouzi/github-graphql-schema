@@ -3458,6 +3458,11 @@ input CloseIssueInput {
   ID of the issue to be closed.
   """
   issueId: ID!
+
+  """
+  The reason the issue is to be closed.
+  """
+  stateReason: IssueClosedStateReason
 }
 
 """
@@ -3534,6 +3539,11 @@ type ClosedEvent implements Node & UniformResourceLocatable {
   The HTTP path for this closed event.
   """
   resourcePath: URI!
+
+  """
+  The reason the issue state was changed to closed.
+  """
+  stateReason: IssueStateReason
 
   """
   The HTTP URL for this closed event.
@@ -14587,6 +14597,11 @@ type Issue implements Assignable & Closable & Comment & Labelable & Lockable & N
   state: IssueState!
 
   """
+  Identifies the reason for the issue state.
+  """
+  stateReason: IssueStateReason
+
+  """
   A list of events, comments, commits, etc. associated with the issue.
   """
   timeline(
@@ -14790,6 +14805,21 @@ type Issue implements Assignable & Closable & Comment & Labelable & Lockable & N
   Identifies if the viewer is watching, not watching, or ignoring the subscribable entity.
   """
   viewerSubscription: SubscriptionState
+}
+
+"""
+The possible state reasons of a closed issue.
+"""
+enum IssueClosedStateReason {
+  """
+  An issue that has been closed as completed
+  """
+  COMPLETED
+
+  """
+  An issue that has been closed as not planned
+  """
+  NOT_PLANNED
 }
 
 """
@@ -15247,6 +15277,26 @@ enum IssueState {
   An issue that is still open
   """
   OPEN
+}
+
+"""
+The possible state reasons of an issue.
+"""
+enum IssueStateReason {
+  """
+  An issue that has been closed as completed
+  """
+  COMPLETED
+
+  """
+  An issue that has been closed as not planned
+  """
+  NOT_PLANNED
+
+  """
+  An issue that has been reopened
+  """
+  REOPENED
 }
 
 """
@@ -32562,6 +32612,11 @@ type ReopenedEvent implements Node {
   """
   createdAt: DateTime!
   id: ID!
+
+  """
+  The reason the issue state was changed to open.
+  """
+  stateReason: IssueStateReason
 }
 
 """
