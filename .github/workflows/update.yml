@@ -38,6 +38,7 @@ jobs:
           path: schema.graphql
           commit-message: "WIP: schema.graphql changed - please review"
           labels: maintenance
+          reviewers: zhouzi
       - name: update schema.json
         uses: gr2m/create-or-update-pull-request-action@v1.x
         env:
