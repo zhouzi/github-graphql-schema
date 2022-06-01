@@ -32828,6 +32828,61 @@
       },
       {
         "kind": "OBJECT",
+        "name": "ExternalIdentityAttribute",
+        "description": "An attribute for the External Identity attributes collection",
+        "fields": [
+          {
+            "name": "metadata",
+            "description": "The attribute metadata as JSON",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name",
+            "description": "The attribute name",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "value",
+            "description": "The attribute value",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
         "name": "ExternalIdentityConnection",
         "description": "The connection type for ExternalIdentity.",
         "fields": [
@@ -32945,6 +33000,30 @@
         "name": "ExternalIdentitySamlAttributes",
         "description": "SAML attributes for the External Identity",
         "fields": [
+          {
+            "name": "attributes",
+            "description": "SAML Identity attributes",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ExternalIdentityAttribute",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "emails",
             "description": "The emails associated with the SAML identity",

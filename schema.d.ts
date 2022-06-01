@@ -6168,6 +6168,17 @@ export type ExternalIdentity = Node & {
   user?: Maybe<User>;
 };
 
+/** An attribute for the External Identity attributes collection */
+export type ExternalIdentityAttribute = {
+  __typename?: 'ExternalIdentityAttribute';
+  /** The attribute metadata as JSON */
+  metadata?: Maybe<Scalars['String']>;
+  /** The attribute name */
+  name: Scalars['String'];
+  /** The attribute value */
+  value: Scalars['String'];
+};
+
 /** The connection type for ExternalIdentity. */
 export type ExternalIdentityConnection = {
   __typename?: 'ExternalIdentityConnection';
@@ -6193,6 +6204,8 @@ export type ExternalIdentityEdge = {
 /** SAML attributes for the External Identity */
 export type ExternalIdentitySamlAttributes = {
   __typename?: 'ExternalIdentitySamlAttributes';
+  /** SAML Identity attributes */
+  attributes: Array<ExternalIdentityAttribute>;
   /** The emails associated with the SAML identity */
   emails?: Maybe<Array<UserEmailMetadata>>;
   /** Family name of the SAML identity */
