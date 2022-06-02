@@ -3598,7 +3598,7 @@
           },
           {
             "name": "commitBody",
-            "description": "The commit message of the auto-merge request.",
+            "description": "The commit message of the auto-merge request. If a merge queue is required by the base branch, this value will be set by the merge queue when merging.",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3610,7 +3610,7 @@
           },
           {
             "name": "commitHeadline",
-            "description": "The commit title of the auto-merge request.",
+            "description": "The commit title of the auto-merge request. If a merge queue is required by the base branch, this value will be set by the merge queue when merging",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -3646,7 +3646,7 @@
           },
           {
             "name": "mergeMethod",
-            "description": "The merge method of the auto-merge request.",
+            "description": "The merge method of the auto-merge request. If a merge queue is required by the base branch, this value will be set by the merge queue when merging.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -4866,6 +4866,11 @@
         "possibleTypes": [
           {
             "kind": "OBJECT",
+            "name": "App",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
             "name": "Team",
             "ofType": null
           },
@@ -5863,11 +5868,11 @@
       {
         "kind": "OBJECT",
         "name": "BypassForcePushAllowance",
-        "description": "A team or user who has the ability to bypass a force push requirement on a protected branch.",
+        "description": "A user, team, or app who has the ability to bypass a force push requirement on a protected branch.",
         "fields": [
           {
             "name": "actor",
-            "description": "The actor that can dismiss.",
+            "description": "The actor that can force push.",
             "args": [],
             "type": {
               "kind": "UNION",
@@ -5879,7 +5884,7 @@
           },
           {
             "name": "branchProtectionRule",
-            "description": "Identifies the branch protection rule associated with the allowed user or team.",
+            "description": "Identifies the branch protection rule associated with the allowed user, team, or app.",
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -6034,11 +6039,11 @@
       {
         "kind": "OBJECT",
         "name": "BypassPullRequestAllowance",
-        "description": "A team or user who has the ability to bypass a pull request requirement on a protected branch.",
+        "description": "A user, team, or app who has the ability to bypass a pull request requirement on a protected branch.",
         "fields": [
           {
             "name": "actor",
-            "description": "The actor that can dismiss.",
+            "description": "The actor that can bypass.",
             "args": [],
             "type": {
               "kind": "UNION",
@@ -6050,7 +6055,7 @@
           },
           {
             "name": "branchProtectionRule",
-            "description": "Identifies the branch protection rule associated with the allowed user or team.",
+            "description": "Identifies the branch protection rule associated with the allowed user, team, or app.",
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -9401,6 +9406,16 @@
             "defaultValue": null
           },
           {
+            "name": "stateReason",
+            "description": "The reason the issue is to be closed.",
+            "type": {
+              "kind": "ENUM",
+              "name": "IssueClosedStateReason",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "clientMutationId",
             "description": "A unique identifier for the client performing the mutation.",
             "type": {
@@ -9609,6 +9624,18 @@
                 "name": "URI",
                 "ofType": null
               }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "stateReason",
+            "description": "The reason the issue state was changed to closed.",
+            "args": [],
+            "type": {
+              "kind": "ENUM",
+              "name": "IssueStateReason",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -15117,7 +15144,7 @@
           },
           {
             "name": "reviewDismissalActorIds",
-            "description": "A list of User or Team IDs allowed to dismiss reviews on pull requests targeting matching branches.",
+            "description": "A list of User, Team, or App IDs allowed to dismiss reviews on pull requests targeting matching branches.",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -15135,7 +15162,7 @@
           },
           {
             "name": "bypassPullRequestActorIds",
-            "description": "A list of User or Team IDs allowed to bypass pull requests targeting matching branches.",
+            "description": "A list of User, Team, or App IDs allowed to bypass pull requests targeting matching branches.",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -15153,7 +15180,7 @@
           },
           {
             "name": "bypassForcePushActorIds",
-            "description": "A list of User or Team IDs allowed to bypass force push targeting matching branches.",
+            "description": "A list of User, Team, or App IDs allowed to bypass force push targeting matching branches.",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -38171,6 +38198,18 @@
             "deprecationReason": null
           },
           {
+            "name": "stateReason",
+            "description": "Identifies the reason for the issue state.",
+            "args": [],
+            "type": {
+              "kind": "ENUM",
+              "name": "IssueStateReason",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "timeline",
             "description": "A list of events, comments, commits, etc. associated with the issue.",
             "args": [
@@ -38769,6 +38808,29 @@
           }
         ],
         "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "IssueClosedStateReason",
+        "description": "The possible state reasons of a closed issue.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "COMPLETED",
+            "description": "An issue that has been closed as completed",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NOT_PLANNED",
+            "description": "An issue that has been closed as not planned",
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
         "possibleTypes": null
       },
       {
@@ -39986,6 +40048,35 @@
           {
             "name": "CLOSED",
             "description": "An issue that has been closed",
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "IssueStateReason",
+        "description": "The possible state reasons of an issue.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "REOPENED",
+            "description": "An issue that has been reopened",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NOT_PLANNED",
+            "description": "An issue that has been closed as not planned",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "COMPLETED",
+            "description": "An issue that has been closed as completed",
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -46050,6 +46141,18 @@
           {
             "name": "FAILED",
             "description": "The Octoshift migration has failed.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "PENDING_VALIDATION",
+            "description": "The Octoshift migration needs to have its credentials validated.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "FAILED_VALIDATION",
+            "description": "The Octoshift migration has invalid credentials.",
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -64494,6 +64597,22 @@
             "deprecationReason": null
           },
           {
+            "name": "viewerIsFollowing",
+            "description": "Whether or not this Organization is followed by the viewer.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "viewerIsSponsoring",
             "description": "True if the viewer is sponsoring this user/organization.",
             "args": [],
@@ -81691,7 +81810,7 @@
       {
         "kind": "OBJECT",
         "name": "PushAllowance",
-        "description": "A team, user or app who has the ability to push to a protected branch.",
+        "description": "A team, user, or app who has the ability to push to a protected branch.",
         "fields": [
           {
             "name": "actor",
@@ -81707,7 +81826,7 @@
           },
           {
             "name": "branchProtectionRule",
-            "description": "Identifies the branch protection rule associated with the allowed user or team.",
+            "description": "Identifies the branch protection rule associated with the allowed user, team, or app.",
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -87725,6 +87844,18 @@
                 "name": "ID",
                 "ofType": null
               }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "stateReason",
+            "description": "The reason the issue state was changed to open.",
+            "args": [],
+            "type": {
+              "kind": "ENUM",
+              "name": "IssueStateReason",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -102158,7 +102289,7 @@
       {
         "kind": "OBJECT",
         "name": "ReviewDismissalAllowance",
-        "description": "A team or user who has the ability to dismiss a review on a protected branch.",
+        "description": "A user, team, or app who has the ability to dismiss a review on a protected branch.",
         "fields": [
           {
             "name": "actor",
@@ -102174,7 +102305,7 @@
           },
           {
             "name": "branchProtectionRule",
-            "description": "Identifies the branch protection rule associated with the allowed user or team.",
+            "description": "Identifies the branch protection rule associated with the allowed user, team, or app.",
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -102221,6 +102352,11 @@
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": [
+          {
+            "kind": "OBJECT",
+            "name": "App",
+            "ofType": null
+          },
           {
             "kind": "OBJECT",
             "name": "Team",
@@ -109106,9 +109242,13 @@
             "name": "accessToken",
             "description": "The Octoshift migration source access token.",
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "defaultValue": null
           },
@@ -118913,7 +119053,7 @@
           },
           {
             "name": "reviewDismissalActorIds",
-            "description": "A list of User or Team IDs allowed to dismiss reviews on pull requests targeting matching branches.",
+            "description": "A list of User, Team, or App IDs allowed to dismiss reviews on pull requests targeting matching branches.",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -118931,7 +119071,7 @@
           },
           {
             "name": "bypassPullRequestActorIds",
-            "description": "A list of User or Team IDs allowed to bypass pull requests targeting matching branches.",
+            "description": "A list of User, Team, or App IDs allowed to bypass pull requests targeting matching branches.",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -118949,7 +119089,7 @@
           },
           {
             "name": "bypassForcePushActorIds",
-            "description": "A list of User or Team IDs allowed to bypass force push targeting matching branches.",
+            "description": "A list of User, Team, or App IDs allowed to bypass force push targeting matching branches.",
             "type": {
               "kind": "LIST",
               "name": null,
