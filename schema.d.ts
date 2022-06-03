@@ -7103,7 +7103,7 @@ export type IpAllowListForInstalledAppsEnabledSettingValue =
 export type IpAllowListOwner = App | Enterprise | Organization;
 
 /** An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project. */
-export type Issue = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectNextOwner & ProjectV2Owner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
+export type Issue = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectNextOwner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'Issue';
   /** Reason that the conversation was locked. */
   activeLockReason?: Maybe<LockReason>;
@@ -11780,7 +11780,7 @@ export type OrgUpdateMemberRepositoryInvitationPermissionAuditEntry = AuditEntry
 };
 
 /** An account on GitHub, with one or more owners, that has repositories, members and teams. */
-export type Organization = Actor & MemberStatusable & Node & PackageOwner & ProfileOwner & ProjectNextOwner & ProjectOwner & ProjectV2Owner & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable & {
+export type Organization = Actor & MemberStatusable & Node & PackageOwner & ProfileOwner & ProjectNextOwner & ProjectOwner & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable & {
   __typename?: 'Organization';
   /** Determine if this repository owner has any items that can be pinned to their profile. */
   anyPinnableItems: Scalars['Boolean'];
@@ -13860,11 +13860,6 @@ export type ProjectTemplate =
   /** Create a board to triage and prioritize bugs with To do, priority, and Done columns. */
   | 'BUG_TRIAGE';
 
-/** Represents an owner of a project (beta). */
-export type ProjectV2Owner = {
-  id: Scalars['ID'];
-};
-
 /** A view within a Project. */
 export type ProjectView = Node & {
   __typename?: 'ProjectView';
@@ -13983,7 +13978,7 @@ export type PublicKeyEdge = {
 };
 
 /** A repository pull request. */
-export type PullRequest = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectNextOwner & ProjectV2Owner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
+export type PullRequest = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectNextOwner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'PullRequest';
   /** Reason that the conversation was locked. */
   activeLockReason?: Maybe<LockReason>;
@@ -22871,7 +22866,7 @@ export type UpdateTopicsPayload = {
 };
 
 /** A user is an individual's account on GitHub that owns repositories and can make new content. */
-export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner & ProjectOwner & ProjectV2Owner & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable & {
+export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner & ProjectOwner & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable & {
   __typename?: 'User';
   /** Determine if this repository owner has any items that can be pinned to their profile. */
   anyPinnableItems: Scalars['Boolean'];
