@@ -38800,11 +38800,6 @@
             "kind": "INTERFACE",
             "name": "ProjectNextOwner",
             "ofType": null
-          },
-          {
-            "kind": "INTERFACE",
-            "name": "ProjectV2Owner",
-            "ofType": null
           }
         ],
         "enumValues": null,
@@ -64670,11 +64665,6 @@
           },
           {
             "kind": "INTERFACE",
-            "name": "ProjectV2Owner",
-            "ofType": null
-          },
-          {
-            "kind": "INTERFACE",
             "name": "RepositoryDiscussionAuthor",
             "ofType": null
           },
@@ -73998,54 +73988,6 @@
         "possibleTypes": null
       },
       {
-        "kind": "INTERFACE",
-        "name": "ProjectV2Owner",
-        "description": "Represents an owner of a project (beta).",
-        "fields": [
-          {
-            "name": "id",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": [
-          {
-            "kind": "OBJECT",
-            "name": "Issue",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "Organization",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "PullRequest",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "User",
-            "ofType": null
-          }
-        ]
-      },
-      {
         "kind": "OBJECT",
         "name": "ProjectView",
         "description": "A view within a Project.",
@@ -77163,11 +77105,6 @@
           {
             "kind": "INTERFACE",
             "name": "ProjectNextOwner",
-            "ofType": null
-          },
-          {
-            "kind": "INTERFACE",
-            "name": "ProjectV2Owner",
             "ofType": null
           }
         ],
@@ -127501,11 +127438,6 @@
           {
             "kind": "INTERFACE",
             "name": "ProjectNextOwner",
-            "ofType": null
-          },
-          {
-            "kind": "INTERFACE",
-            "name": "ProjectV2Owner",
             "ofType": null
           },
           {
