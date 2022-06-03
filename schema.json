@@ -82820,6 +82820,24 @@
                 "defaultValue": null
               },
               {
+                "name": "classifications",
+                "description": "A list of classifications to filter advisories by.",
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "ENUM",
+                      "name": "SecurityAdvisoryClassification",
+                      "ofType": null
+                    }
+                  }
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "after",
                 "description": "Returns the elements in the list that come after the specified cursor.",
                 "type": {
@@ -82945,6 +82963,24 @@
                     "ofType": {
                       "kind": "ENUM",
                       "name": "SecurityAdvisorySeverity",
+                      "ofType": null
+                    }
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "classifications",
+                "description": "A list of advisory classifications to filter vulnerabilities by.",
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "ENUM",
+                      "name": "SecurityAdvisoryClassification",
                       "ofType": null
                     }
                   }
@@ -103951,6 +103987,22 @@
         "description": "A GitHub Security Advisory",
         "fields": [
           {
+            "name": "classification",
+            "description": "The classification of the advisory",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "SecurityAdvisoryClassification",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "cvss",
             "description": "The CVSS associated with this advisory",
             "args": [],
@@ -104288,6 +104340,24 @@
                 "defaultValue": null
               },
               {
+                "name": "classifications",
+                "description": "A list of advisory classifications to filter vulnerabilities by.",
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "ENUM",
+                      "name": "SecurityAdvisoryClassification",
+                      "ofType": null
+                    }
+                  }
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "after",
                 "description": "Returns the elements in the list that come after the specified cursor.",
                 "type": {
@@ -104362,6 +104432,29 @@
           }
         ],
         "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "SecurityAdvisoryClassification",
+        "description": "Classification of the advisory.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "GENERAL",
+            "description": "Classification of general advisories.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "MALWARE",
+            "description": "Classification of malware advisories.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
         "possibleTypes": null
       },
       {
