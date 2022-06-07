@@ -4030,7 +4030,9 @@ export type DependencyGraphEcosystem =
   /** Python packages hosted at PyPI.org */
   | 'PIP'
   /** Ruby gems hosted at RubyGems.org */
-  | 'RUBYGEMS';
+  | 'RUBYGEMS'
+  /** Rust crates */
+  | 'RUST';
 
 /** A repository deploy key. */
 export type DeployKey = Node & {
