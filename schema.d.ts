@@ -6112,9 +6112,9 @@ export type EnterpriseUserAccountEdge = {
 
 /** The possible roles for enterprise membership. */
 export type EnterpriseUserAccountMembershipRole =
-  /** The user is a member of the enterprise membership. */
+  /** The user is a member of an organization in the enterprise. */
   | 'MEMBER'
-  /** The user is an owner of the enterprise membership. */
+  /** The user is an owner of an organization in the enterprise. */
   | 'OWNER';
 
 /** The possible GitHub Enterprise deployments where this user can exist. */

@@ -32494,13 +32494,13 @@
         "enumValues": [
           {
             "name": "MEMBER",
-            "description": "The user is a member of the enterprise membership.",
+            "description": "The user is a member of an organization in the enterprise.",
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "OWNER",
-            "description": "The user is an owner of the enterprise membership.",
+            "description": "The user is an owner of an organization in the enterprise.",
             "isDeprecated": false,
             "deprecationReason": null
           }
