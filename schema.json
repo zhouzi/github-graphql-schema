@@ -20606,6 +20606,12 @@
             "description": "GitHub Actions",
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "RUST",
+            "description": "Rust crates",
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "possibleTypes": null
