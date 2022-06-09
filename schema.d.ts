@@ -17492,6 +17492,8 @@ export type Repository = Node & PackageOwner & ProjectOwner & RepositoryInfo & S
   shortDescriptionHTML: Scalars['HTML'];
   /** Whether or not squash-merging is enabled on this repository. */
   squashMergeAllowed: Scalars['Boolean'];
+  /** Whether a squash merge commit can use the pull request title as default. */
+  squashPrTitleUsedAsDefault: Scalars['Boolean'];
   /** The SSH URL to clone this repository */
   sshUrl: Scalars['GitSSHRemote'];
   /** Returns a count of how many stargazers there are on this object */
