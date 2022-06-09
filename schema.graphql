@@ -36217,6 +36217,11 @@ type Repository implements Node & PackageOwner & ProjectOwner & RepositoryInfo &
   squashMergeAllowed: Boolean!
 
   """
+  Whether a squash merge commit can use the pull request title as default.
+  """
+  squashPrTitleUsedAsDefault: Boolean!
+
+  """
   The SSH URL to clone this repository
   """
   sshUrl: GitSSHRemote!

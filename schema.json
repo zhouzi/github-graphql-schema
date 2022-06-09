@@ -97135,6 +97135,22 @@
             "deprecationReason": null
           },
           {
+            "name": "squashPrTitleUsedAsDefault",
+            "description": "Whether a squash merge commit can use the pull request title as default.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "sshUrl",
             "description": "The SSH URL to clone this repository",
             "args": [],
