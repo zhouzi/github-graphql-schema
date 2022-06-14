@@ -51819,7 +51819,7 @@
           },
           {
             "name": "updatePullRequestBranch",
-            "description": "Merge HEAD from upstream branch into pull request branch",
+            "description": "Merge or Rebase HEAD from upstream branch into pull request branch",
             "args": [
               {
                 "name": "input",
@@ -94136,6 +94136,22 @@
         "name": "Repository",
         "description": "A repository contains the content for a project.",
         "fields": [
+          {
+            "name": "allowUpdateBranch",
+            "description": "Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "assignableUsers",
             "description": "A list of users that can be assigned to issues in this repository.",

@@ -9232,7 +9232,7 @@ export type Mutation = {
   updateProjectNextItemField?: Maybe<UpdateProjectNextItemFieldPayload>;
   /** Update a pull request */
   updatePullRequest?: Maybe<UpdatePullRequestPayload>;
-  /** Merge HEAD from upstream branch into pull request branch */
+  /** Merge or Rebase HEAD from upstream branch into pull request branch */
   updatePullRequestBranch?: Maybe<UpdatePullRequestBranchPayload>;
   /** Updates the body of a pull request review. */
   updatePullRequestReview?: Maybe<UpdatePullRequestReviewPayload>;
@@ -17315,6 +17315,11 @@ export type ReportedContentClassifiers =
 /** A repository contains the content for a project. */
 export type Repository = Node & PackageOwner & ProjectOwner & RepositoryInfo & Starrable & Subscribable & UniformResourceLocatable & {
   __typename?: 'Repository';
+  /**
+   * Whether or not a pull request head branch that is behind its base branch can
+   * always be updated even if it is not required to be up to date before merging.
+   */
+  allowUpdateBranch: Scalars['Boolean'];
   /** A list of users that can be assigned to issues in this repository. */
   assignableUsers: UserConnection;
   /** Whether or not Auto-merge can be enabled on pull requests in this repository. */
