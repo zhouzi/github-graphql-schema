@@ -11340,6 +11340,8 @@ export type OrgRemoveMemberAuditEntryMembershipType =
    * repositories in the organization.
    */
   | 'OUTSIDE_COLLABORATOR'
+  /** A suspended member. */
+  | 'SUSPENDED'
   /**
    * An unaffiliated collaborator is a person who is not a member of the
    * Organization and does not have access to any repositories in the Organization.
