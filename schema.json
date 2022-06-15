@@ -59376,6 +59376,12 @@
         "interfaces": null,
         "enumValues": [
           {
+            "name": "SUSPENDED",
+            "description": "A suspended member.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "DIRECT_MEMBER",
             "description": "A direct member is a user that is a member of the Organization.",
             "isDeprecated": false,
