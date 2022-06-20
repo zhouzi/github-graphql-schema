@@ -18679,7 +18679,10 @@ export type RepositoryVulnerabilityAlert = Node & RepositoryNode & {
   dismissedAt?: Maybe<Scalars['DateTime']>;
   /** The user who dismissed the alert */
   dismisser?: Maybe<User>;
-  /** The reason the alert was marked as fixed. */
+  /**
+   * The reason the alert was marked as fixed.
+   * @deprecated The `fixReason` field is being removed. You can still use `fixedAt` and `dismissReason`. Removal on 2022-10-01 UTC.
+   */
   fixReason?: Maybe<Scalars['String']>;
   /** When was the alert fixed? */
   fixedAt?: Maybe<Scalars['DateTime']>;
