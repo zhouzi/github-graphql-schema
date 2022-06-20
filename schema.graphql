@@ -37994,7 +37994,7 @@ type RepositoryVulnerabilityAlert implements Node & RepositoryNode {
   """
   The reason the alert was marked as fixed.
   """
-  fixReason: String
+  fixReason: String @deprecated(reason: "The `fixReason` field is being removed. You can still use `fixedAt` and `dismissReason`. Removal on 2022-10-01 UTC.")
 
   """
   When was the alert fixed?
