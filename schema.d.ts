@@ -14259,6 +14259,8 @@ export type PullRequest = Assignable & Closable & Comment & Labelable & Lockable
   viewerCanDeleteHeadRef: Scalars['Boolean'];
   /** Whether or not the viewer can disable auto-merge */
   viewerCanDisableAutoMerge: Scalars['Boolean'];
+  /** Can the viewer edit files within this pull request. */
+  viewerCanEditFiles: Scalars['Boolean'];
   /** Whether or not the viewer can enable auto-merge */
   viewerCanEnableAutoMerge: Scalars['Boolean'];
   /** Indicates whether the viewer can bypass branch protections and merge the pull request immediately */

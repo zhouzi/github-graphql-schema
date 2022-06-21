@@ -77402,6 +77402,22 @@
             "deprecationReason": null
           },
           {
+            "name": "viewerCanEditFiles",
+            "description": "Can the viewer edit files within this pull request.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "viewerCanEnableAutoMerge",
             "description": "Whether or not the viewer can enable auto-merge",
             "args": [],
