@@ -28825,6 +28825,11 @@ type PullRequest implements Assignable & Closable & Comment & Labelable & Lockab
   viewerCanDisableAutoMerge: Boolean!
 
   """
+  Can the viewer edit files within this pull request.
+  """
+  viewerCanEditFiles: Boolean!
+
+  """
   Whether or not the viewer can enable auto-merge
   """
   viewerCanEnableAutoMerge: Boolean!
