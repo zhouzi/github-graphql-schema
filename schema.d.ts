@@ -2716,7 +2716,10 @@ export type ContributionsCollection = {
   pullRequestContributions: CreatedPullRequestContributionConnection;
   /** Pull request contributions made by the user, grouped by repository. */
   pullRequestContributionsByRepository: Array<PullRequestContributionsByRepository>;
-  /** Pull request review contributions made by the user. */
+  /**
+   * Pull request review contributions made by the user. Returns the most recently
+   * submitted review for each PR reviewed by the user.
+   */
   pullRequestReviewContributions: CreatedPullRequestReviewContributionConnection;
   /** Pull request review contributions made by the user, grouped by repository. */
   pullRequestReviewContributionsByRepository: Array<PullRequestReviewContributionsByRepository>;
