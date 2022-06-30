@@ -14515,6 +14515,7 @@ export type ProjectV2FieldsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2FieldOrder>;
 };
 
 
@@ -14524,6 +14525,7 @@ export type ProjectV2ItemsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2ItemOrder>;
 };
 
 
@@ -14533,6 +14535,7 @@ export type ProjectV2RepositoriesArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<RepositoryOrder>;
 };
 
 
@@ -14542,6 +14545,7 @@ export type ProjectV2ViewsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2ViewOrder>;
 };
 
 /** The connection type for ProjectV2. */
@@ -14647,6 +14651,23 @@ export type ProjectV2FieldEdge = {
   /** The item at the end of the edge. */
   node?: Maybe<ProjectV2Field>;
 };
+
+/** Ordering options for project v2 field connections */
+export type ProjectV2FieldOrder = {
+  /** The ordering direction. */
+  direction: OrderDirection;
+  /** The field to order the project v2 fields by. */
+  field: ProjectV2FieldOrderField;
+};
+
+/** Properties by which project v2 field connections can be ordered. */
+export type ProjectV2FieldOrderField =
+  /** Order project v2 fields by creation time */
+  | 'CREATED_AT'
+  /** Order project v2 fields by name */
+  | 'NAME'
+  /** Order project v2 fields by position */
+  | 'POSITION';
 
 /** The type of a project field. */
 export type ProjectV2FieldType =
@@ -14993,6 +15014,19 @@ export type ProjectV2ItemFieldValueEdge = {
   node?: Maybe<ProjectV2ItemFieldValue>;
 };
 
+/** Ordering options for project v2 item connections */
+export type ProjectV2ItemOrder = {
+  /** The ordering direction. */
+  direction: OrderDirection;
+  /** The field to order the project v2 items by. */
+  field: ProjectV2ItemOrderField;
+};
+
+/** Properties by which project v2 item connections can be ordered. */
+export type ProjectV2ItemOrderField =
+  /** Order project v2 items by the their position in the project */
+  | 'POSITION';
+
 /** The type of a project item. */
 export type ProjectV2ItemType =
   /** Draft Issue */
@@ -15279,6 +15313,23 @@ export type ProjectV2ViewLayout =
   | 'BOARD_LAYOUT'
   /** Table layout */
   | 'TABLE_LAYOUT';
+
+/** Ordering options for project v2 view connections */
+export type ProjectV2ViewOrder = {
+  /** The ordering direction. */
+  direction: OrderDirection;
+  /** The field to order the project v2 views by. */
+  field: ProjectV2ViewOrderField;
+};
+
+/** Properties by which project v2 view connections can be ordered. */
+export type ProjectV2ViewOrderField =
+  /** Order project v2 views by creation time */
+  | 'CREATED_AT'
+  /** Order project v2 views by name */
+  | 'NAME'
+  /** Order project v2 views by position */
+  | 'POSITION';
 
 /** A view within a Project. */
 export type ProjectView = Node & {
