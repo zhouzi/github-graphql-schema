@@ -14743,6 +14743,7 @@ export type ProjectV2ItemFieldValuesArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2ItemFieldValueOrder>;
 };
 
 /** The connection type for ProjectV2Item. */
@@ -15013,6 +15014,19 @@ export type ProjectV2ItemFieldValueEdge = {
   /** The item at the end of the edge. */
   node?: Maybe<ProjectV2ItemFieldValue>;
 };
+
+/** Ordering options for project v2 item field value connections */
+export type ProjectV2ItemFieldValueOrder = {
+  /** The ordering direction. */
+  direction: OrderDirection;
+  /** The field to order the project v2 item field values by. */
+  field: ProjectV2ItemFieldValueOrderField;
+};
+
+/** Properties by which project v2 item field value connections can be ordered. */
+export type ProjectV2ItemFieldValueOrderField =
+  /** Order project v2 item field values by the their position in the project */
+  | 'POSITION';
 
 /** Ordering options for project v2 item connections */
 export type ProjectV2ItemOrder = {
