@@ -14882,6 +14882,7 @@ export type ProjectV2ItemFieldPullRequestValuePullRequestsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<PullRequestOrder>;
 };
 
 /** The value of a repository field in a Project item. */
