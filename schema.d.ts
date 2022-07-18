@@ -5262,11 +5262,6 @@ export type Enterprise = Node & {
   slug: Scalars['String'];
   /** The HTTP URL for this enterprise. */
   url: Scalars['URI'];
-  /**
-   * A list of user accounts on this enterprise.
-   * @deprecated The `Enterprise.userAccounts` field is being removed. Use the `Enterprise.members` field instead. Removal on 2022-07-01 UTC.
-   */
-  userAccounts: EnterpriseUserAccountConnection;
   /** Is the current viewer an admin of this enterprise? */
   viewerIsAdmin: Scalars['Boolean'];
   /** The URL of the enterprise website. */
@@ -5303,15 +5298,6 @@ export type EnterpriseOrganizationsArgs = {
   orderBy?: InputMaybe<OrganizationOrder>;
   query?: InputMaybe<Scalars['String']>;
   viewerOrganizationRole?: InputMaybe<RoleInOrganization>;
-};
-
-
-/** An account to manage multiple organizations with consolidated policy and billing. */
-export type EnterpriseUserAccountsArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
 };
 
 /** The connection type for User. */
@@ -6354,28 +6340,6 @@ export type EnterpriseUserAccountOrganizationsArgs = {
   orderBy?: InputMaybe<OrganizationOrder>;
   query?: InputMaybe<Scalars['String']>;
   role?: InputMaybe<EnterpriseUserAccountMembershipRole>;
-};
-
-/** The connection type for EnterpriseUserAccount. */
-export type EnterpriseUserAccountConnection = {
-  __typename?: 'EnterpriseUserAccountConnection';
-  /** A list of edges. */
-  edges?: Maybe<Array<Maybe<EnterpriseUserAccountEdge>>>;
-  /** A list of nodes. */
-  nodes?: Maybe<Array<Maybe<EnterpriseUserAccount>>>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-  /** Identifies the total count of items in the connection. */
-  totalCount: Scalars['Int'];
-};
-
-/** An edge in a connection. */
-export type EnterpriseUserAccountEdge = {
-  __typename?: 'EnterpriseUserAccountEdge';
-  /** A cursor for use in pagination. */
-  cursor: Scalars['String'];
-  /** The item at the end of the edge. */
-  node?: Maybe<EnterpriseUserAccount>;
 };
 
 /** The possible roles for enterprise membership. */
@@ -15262,6 +15226,7 @@ export type ProjectV2ViewGroupByArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2FieldOrder>;
 };
 
 
@@ -15271,6 +15236,7 @@ export type ProjectV2ViewItemsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2ItemOrder>;
 };
 
 
@@ -15289,6 +15255,7 @@ export type ProjectV2ViewVerticalGroupByArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2FieldOrder>;
 };
 
 
@@ -15298,6 +15265,7 @@ export type ProjectV2ViewVisibleFieldsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2FieldOrder>;
 };
 
 /** The connection type for ProjectV2View. */
