@@ -15199,8 +15199,6 @@ export type ProjectV2View = Node & {
   /** The view's group-by field. */
   groupBy?: Maybe<ProjectV2FieldConnection>;
   id: Scalars['ID'];
-  /** The view's filtered items. */
-  items: ProjectV2ItemConnection;
   /** The project view's layout. */
   layout: ProjectV2ViewLayout;
   /** The project view's name. */
@@ -15227,16 +15225,6 @@ export type ProjectV2ViewGroupByArgs = {
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<ProjectV2FieldOrder>;
-};
-
-
-/** A view within a ProjectV2. */
-export type ProjectV2ViewItemsArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<ProjectV2ItemOrder>;
 };
 
 
@@ -15339,11 +15327,6 @@ export type ProjectView = Node & {
   groupBy?: Maybe<Array<Scalars['Int']>>;
   id: Scalars['ID'];
   /**
-   * The view's filtered items.
-   * @deprecated The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.
-   */
-  items: ProjectNextItemConnection;
-  /**
    * The project view's layout.
    * @deprecated The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.
    */
@@ -15383,15 +15366,6 @@ export type ProjectView = Node & {
    * @deprecated The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.
    */
   visibleFields?: Maybe<Array<Scalars['Int']>>;
-};
-
-
-/** A view within a Project. */
-export type ProjectViewItemsArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
 };
 
 /** The connection type for ProjectView. */
