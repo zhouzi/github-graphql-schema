@@ -14688,6 +14688,8 @@ export type ProjectV2Item = Node & {
   creator?: Maybe<Bot | EnterpriseUserAccount | Mannequin | Organization | User>;
   /** Identifies the primary key from the database. */
   databaseId?: Maybe<Scalars['Int']>;
+  /** A specific field value given a field name */
+  fieldValueByName?: Maybe<ProjectV2ItemFieldValue>;
   /** List of field values */
   fieldValues: ProjectV2ItemFieldValueConnection;
   id: Scalars['ID'];
@@ -14699,6 +14701,12 @@ export type ProjectV2Item = Node & {
   type: ProjectV2ItemType;
   /** Identifies the date and time when the object was last updated. */
   updatedAt: Scalars['DateTime'];
+};
+
+
+/** An item within a Project. */
+export type ProjectV2ItemFieldValueByNameArgs = {
+  name: Scalars['String'];
 };
 
 
