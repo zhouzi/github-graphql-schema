@@ -12595,6 +12595,7 @@ export type OrganizationSponsorsArgs = {
 
 /** An account on GitHub, with one or more owners, that has repositories, members and teams. */
 export type OrganizationSponsorsActivitiesArgs = {
+  actions?: InputMaybe<Array<SponsorsActivityAction>>;
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
@@ -21138,6 +21139,7 @@ export type SponsorableSponsorsArgs = {
 
 /** Entities that can be sponsored through GitHub Sponsors */
 export type SponsorableSponsorsActivitiesArgs = {
+  actions?: InputMaybe<Array<SponsorsActivityAction>>;
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
@@ -25182,6 +25184,7 @@ export type UserSponsorsArgs = {
 
 /** A user is an individual's account on GitHub that owns repositories and can make new content. */
 export type UserSponsorsActivitiesArgs = {
+  actions?: InputMaybe<Array<SponsorsActivityAction>>;
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
