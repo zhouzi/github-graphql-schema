@@ -20789,6 +20789,8 @@ export type SecurityAdvisoryConnection = {
 
 /** The possible ecosystems of a security vulnerability's package. */
 export type SecurityAdvisoryEcosystem =
+  /** GitHub Actions */
+  | 'ACTIONS'
   /** PHP packages hosted at packagist.org */
   | 'COMPOSER'
   /** Erlang/Elixir packages hosted at hex.pm */
