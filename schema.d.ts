@@ -14131,12 +14131,12 @@ export type ProjectNextFieldType =
   | 'REVIEWERS'
   /** Single Select */
   | 'SINGLE_SELECT'
+  /** Tasks */
+  | 'TASKS'
   /** Text */
   | 'TEXT'
   /** Title */
-  | 'TITLE'
-  /** Tracks */
-  | 'TRACKS';
+  | 'TITLE';
 
 /** An item within a new Project. */
 export type ProjectNextItem = Node & {
@@ -14656,12 +14656,12 @@ export type ProjectV2FieldType =
   | 'REVIEWERS'
   /** Single Select */
   | 'SINGLE_SELECT'
+  /** Tasks */
+  | 'TASKS'
   /** Text */
   | 'TEXT'
   /** Title */
-  | 'TITLE'
-  /** Tracks */
-  | 'TRACKS';
+  | 'TITLE';
 
 /** The values that can be used to update a field of an item inside a Project. Only 1 value can be updated at a time. */
 export type ProjectV2FieldValue = {
