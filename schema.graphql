@@ -12704,6 +12704,12 @@ enum EnterpriseUserAccountMembershipRole {
   The user is an owner of an organization in the enterprise.
   """
   OWNER
+
+  """
+  The user is not an owner of the enterprise, and not a member or owner of any
+  organizations in the enterprise; only for EMU-enabled enterprises.
+  """
+  UNAFFILIATED
 }
 
 """
@@ -27653,11 +27659,6 @@ enum ProjectNextFieldType {
   SINGLE_SELECT @deprecated(reason: "The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.")
 
   """
-  Tasks
-  """
-  TASKS @deprecated(reason: "The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.")
-
-  """
   Text
   """
   TEXT @deprecated(reason: "The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.")
@@ -27666,6 +27667,11 @@ enum ProjectNextFieldType {
   Title
   """
   TITLE @deprecated(reason: "The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.")
+
+  """
+  Tracks
+  """
+  TRACKS @deprecated(reason: "The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2022-10-01 UTC.")
 }
 
 """
@@ -28632,11 +28638,6 @@ enum ProjectV2FieldType {
   SINGLE_SELECT
 
   """
-  Tasks
-  """
-  TASKS
-
-  """
   Text
   """
   TEXT
@@ -28645,6 +28646,11 @@ enum ProjectV2FieldType {
   Title
   """
   TITLE
+
+  """
+  Tracks
+  """
+  TRACKS
 }
 
 """
