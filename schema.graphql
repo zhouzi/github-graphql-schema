@@ -19747,7 +19747,7 @@ type Mutation {
   ): UnresolveReviewThreadPayload
 
   """
-  Create a new branch protection rule
+  Update a branch protection rule
   """
   updateBranchProtectionRule(
     """
@@ -40450,6 +40450,11 @@ type RepositoryVulnerabilityAlert implements Node & RepositoryNode {
   The scope of an alert's dependency
   """
   dependencyScope: RepositoryVulnerabilityAlertDependencyScope
+
+  """
+  Comment explaining the reason the alert was dismissed
+  """
+  dismissComment: String
 
   """
   The reason the alert was dismissed
