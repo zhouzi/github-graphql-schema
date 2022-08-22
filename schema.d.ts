@@ -21768,6 +21768,8 @@ export type StartRepositoryMigrationInput = {
   gitArchiveUrl?: InputMaybe<Scalars['String']>;
   /** The GitHub personal access token of the user importing to the target repository. */
   githubPat?: InputMaybe<Scalars['String']>;
+  /** Whether to lock the source repository. */
+  lockSource?: InputMaybe<Scalars['Boolean']>;
   /** The signed URL to access the user-uploaded metadata archive */
   metadataArchiveUrl?: InputMaybe<Scalars['String']>;
   /** The ID of the organization that will own the imported repository. */
