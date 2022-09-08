@@ -5409,6 +5409,21 @@ export type EnterpriseAdministratorRole =
   /** Represents an owner of the enterprise account. */
   | 'OWNER';
 
+/** The possible values for the enterprise allow private repository forking policy value. */
+export type EnterpriseAllowPrivateRepositoryForkingPolicyValue =
+  /** Members can fork a repository to an organization within this enterprise. */
+  | 'ENTERPRISE_ORGANIZATIONS'
+  /** Members can fork a repository to their enterprise-managed user account or an organization inside this enterprise. */
+  | 'ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS'
+  /** Members can fork a repository to their user account or an organization, either inside or outside of this enterprise. */
+  | 'EVERYWHERE'
+  /** Members can fork a repository only within the same organization (intra-org). */
+  | 'SAME_ORGANIZATION'
+  /** Members can fork a repository to their user account or within the same organization. */
+  | 'SAME_ORGANIZATION_USER_ACCOUNTS'
+  /** Members can fork a repository to their user account. */
+  | 'USER_ACCOUNTS';
+
 /** Metadata for an audit entry containing enterprise account information. */
 export type EnterpriseAuditEntryData = {
   /** The HTTP path for this enterprise. */
@@ -5638,6 +5653,8 @@ export type EnterpriseOwnerInfo = {
   allowPrivateRepositoryForkingSetting: EnterpriseEnabledDisabledSettingValue;
   /** A list of enterprise organizations configured with the provided private repository forking setting value. */
   allowPrivateRepositoryForkingSettingOrganizations: OrganizationConnection;
+  /** The value for the allow private repository forking policy on the enterprise. */
+  allowPrivateRepositoryForkingSettingPolicyValue?: Maybe<EnterpriseAllowPrivateRepositoryForkingPolicyValue>;
   /** The setting value for base repository permissions for organizations in this enterprise. */
   defaultRepositoryPermissionSetting: EnterpriseDefaultRepositoryPermissionSettingValue;
   /** A list of enterprise organizations configured with the provided base repository permission. */
@@ -23705,6 +23722,8 @@ export type UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput = {
   clientMutationId?: InputMaybe<Scalars['String']>;
   /** The ID of the enterprise on which to set the allow private repository forking setting. */
   enterpriseId: Scalars['ID'];
+  /** The value for the allow private repository forking policy on the enterprise. */
+  policyValue?: InputMaybe<EnterpriseAllowPrivateRepositoryForkingPolicyValue>;
   /** The value for the allow private repository forking setting on the enterprise. */
   settingValue: EnterpriseEnabledDisabledSettingValue;
 };
