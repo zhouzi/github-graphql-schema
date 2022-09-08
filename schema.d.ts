@@ -2095,8 +2095,19 @@ export type Commit = GitObject & Node & Subscribable & UniformResourceLocatable 
   authors: GitActorConnection;
   /** Fetches `git blame` information. */
   blame: Blame;
-  /** The number of changed files in this commit. */
+  /**
+   * We recommend using the `changedFielsIfAvailable` field instead of
+   * `changedFiles`, as `changedFiles` will cause your request to return an error
+   * if GitHub is unable to calculate the number of changed files.
+   * @deprecated `changedFiles` will be removed. Use `changedFilesIfAvailable` instead. Removal on 2023-01-01 UTC.
+   */
   changedFiles: Scalars['Int'];
+  /**
+   * The number of changed files in this commit. If GitHub is unable to calculate
+   * the number of changed files (for example due to a timeout), this will return
+   * `null`. We recommend using this field instead of `changedFiles`.
+   */
+  changedFilesIfAvailable?: Maybe<Scalars['Int']>;
   /** The check suites associated with a commit. */
   checkSuites?: Maybe<CheckSuiteConnection>;
   /** Comments made on the commit. */
