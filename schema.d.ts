@@ -15332,6 +15332,8 @@ export type ProjectV2View = Node & {
   createdAt: Scalars['DateTime'];
   /** Identifies the primary key from the database. */
   databaseId?: Maybe<Scalars['Int']>;
+  /** The view's visible fields. */
+  fields?: Maybe<ProjectV2FieldConfigurationConnection>;
   /** The project view's filter. */
   filter?: Maybe<Scalars['String']>;
   /** The view's group-by field. */
@@ -15351,8 +15353,21 @@ export type ProjectV2View = Node & {
   updatedAt: Scalars['DateTime'];
   /** The view's vertical-group-by field. */
   verticalGroupBy?: Maybe<ProjectV2FieldConnection>;
-  /** The view's visible fields. */
+  /**
+   * The view's visible fields.
+   * @deprecated The `ProjectV2View#visibleFields` API is deprecated in favour of the more capable `ProjectV2View#fields` API. Check out the `ProjectV2View#fields` API as an example for the more capable alternative. Removal on 2023-01-01 UTC.
+   */
   visibleFields?: Maybe<ProjectV2FieldConnection>;
+};
+
+
+/** A view within a ProjectV2. */
+export type ProjectV2ViewFieldsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ProjectV2FieldOrder>;
 };
 
 
