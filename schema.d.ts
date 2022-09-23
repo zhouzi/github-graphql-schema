@@ -8997,6 +8997,8 @@ export type Migration = {
   continueOnError: Scalars['Boolean'];
   /** Identifies the date and time when the object was created. */
   createdAt: Scalars['DateTime'];
+  /** Identifies the primary key from the database. */
+  databaseId?: Maybe<Scalars['String']>;
   /** The reason the migration failed. */
   failureReason?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -20075,6 +20077,8 @@ export type RepositoryMigration = Migration & Node & {
   continueOnError: Scalars['Boolean'];
   /** Identifies the date and time when the object was created. */
   createdAt: Scalars['DateTime'];
+  /** Identifies the primary key from the database. */
+  databaseId?: Maybe<Scalars['String']>;
   /** The reason the migration failed. */
   failureReason?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
