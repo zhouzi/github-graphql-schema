@@ -1084,7 +1084,7 @@ export type BranchProtectionRule = Node & {
   pushAllowances: PushAllowanceConnection;
   /** The repository associated with this branch protection rule. */
   repository?: Maybe<Repository>;
-  /** Whether someone other than the person who last pushed to the branch must approve this pull request */
+  /** Whether the most recent push must be approved by someone other than the person who pushed it */
   requireLastPushApproval: Scalars['Boolean'];
   /** Number of approving reviews required to update matching branches. */
   requiredApprovingReviewCount?: Maybe<Scalars['Int']>;
@@ -3133,7 +3133,7 @@ export type CreateBranchProtectionRuleInput = {
   pushActorIds?: InputMaybe<Array<Scalars['ID']>>;
   /** The global relay id of the repository in which a new branch protection rule should be created in. */
   repositoryId: Scalars['ID'];
-  /** Whether someone other than the person who last pushed to the branch must approve this pull request */
+  /** Whether the most recent push must be approved by someone other than the person who pushed it */
   requireLastPushApproval?: InputMaybe<Scalars['Boolean']>;
   /** Number of approving reviews required to update matching branches. */
   requiredApprovingReviewCount?: InputMaybe<Scalars['Int']>;
@@ -13023,6 +13023,8 @@ export type OrganizationSponsorsActivitiesArgs = {
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<SponsorsActivityOrder>;
   period?: InputMaybe<SponsorsActivityPeriod>;
+  since?: InputMaybe<Scalars['DateTime']>;
+  until?: InputMaybe<Scalars['DateTime']>;
 };
 
 
@@ -21801,6 +21803,8 @@ export type SponsorableSponsorsActivitiesArgs = {
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<SponsorsActivityOrder>;
   period?: InputMaybe<SponsorsActivityPeriod>;
+  since?: InputMaybe<Scalars['DateTime']>;
+  until?: InputMaybe<Scalars['DateTime']>;
 };
 
 
@@ -24148,7 +24152,7 @@ export type UpdateBranchProtectionRuleInput = {
   pattern?: InputMaybe<Scalars['String']>;
   /** A list of User, Team, or App IDs allowed to push to matching branches. */
   pushActorIds?: InputMaybe<Array<Scalars['ID']>>;
-  /** Whether someone other than the person who last pushed to the branch must approve this pull request */
+  /** Whether the most recent push must be approved by someone other than the person who pushed it */
   requireLastPushApproval?: InputMaybe<Scalars['Boolean']>;
   /** Number of approving reviews required to update matching branches. */
   requiredApprovingReviewCount?: InputMaybe<Scalars['Int']>;
@@ -26034,6 +26038,8 @@ export type UserSponsorsActivitiesArgs = {
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<SponsorsActivityOrder>;
   period?: InputMaybe<SponsorsActivityPeriod>;
+  since?: InputMaybe<Scalars['DateTime']>;
+  until?: InputMaybe<Scalars['DateTime']>;
 };
 
 
