@@ -19682,7 +19682,10 @@ export type Repository = Node & PackageOwner & ProjectOwner & ProjectV2Recent & 
   squashMergeCommitMessage: SquashMergeCommitMessage;
   /** How the default commit title will be generated when squash merging a pull request. */
   squashMergeCommitTitle: SquashMergeCommitTitle;
-  /** Whether a squash merge commit can use the pull request title as default. */
+  /**
+   * Whether a squash merge commit can use the pull request title as default.
+   * @deprecated `squashPrTitleUsedAsDefault` will be removed. Use `Repository.squashMergeCommitTitle` instead. Removal on 2023-04-01 UTC.
+   */
   squashPrTitleUsedAsDefault: Scalars['Boolean'];
   /** The SSH URL to clone this repository */
   sshUrl: Scalars['GitSSHRemote'];
@@ -22035,6 +22038,12 @@ export type SponsorsListing = Node & {
   __typename?: 'SponsorsListing';
   /** The current goal the maintainer is trying to reach with GitHub Sponsors, if any. */
   activeGoal?: Maybe<SponsorsGoal>;
+  /**
+   * The name of the country or region with the maintainer's bank account or fiscal
+   * host. Will only return a value when queried by the maintainer themselves, or
+   * by an admin of the sponsorable organization.
+   */
+  billingCountryOrRegion?: Maybe<Scalars['String']>;
   /** Identifies the date and time when the object was created. */
   createdAt: Scalars['DateTime'];
   /** The HTTP path for the Sponsors dashboard for this Sponsors listing. */
@@ -22052,6 +22061,12 @@ export type SponsorsListing = Node & {
   name: Scalars['String'];
   /** A future date on which this listing is eligible to receive a payout. */
   nextPayoutDate?: Maybe<Scalars['Date']>;
+  /**
+   * The name of the country or region where the maintainer resides. Will only
+   * return a value when queried by the maintainer themselves, or by an admin of
+   * the sponsorable organization.
+   */
+  residenceCountryOrRegion?: Maybe<Scalars['String']>;
   /** The HTTP path for this Sponsors listing. */
   resourcePath: Scalars['URI'];
   /** The short description of the listing. */
