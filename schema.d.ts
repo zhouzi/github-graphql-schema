@@ -552,6 +552,8 @@ export type AddReactionPayload = {
   clientMutationId?: Maybe<Scalars['String']>;
   /** The reaction object. */
   reaction?: Maybe<Reaction>;
+  /** The reaction groups for the subject. */
+  reactionGroups?: Maybe<Array<ReactionGroup>>;
   /** The reactable subject. */
   subject?: Maybe<CommitComment | Discussion | DiscussionComment | Issue | IssueComment | PullRequest | PullRequestReview | PullRequestReviewComment | Release | TeamDiscussion | TeamDiscussionComment>;
 };
@@ -18563,6 +18565,8 @@ export type RemoveReactionPayload = {
   clientMutationId?: Maybe<Scalars['String']>;
   /** The reaction object. */
   reaction?: Maybe<Reaction>;
+  /** The reaction groups for the subject. */
+  reactionGroups?: Maybe<Array<ReactionGroup>>;
   /** The reactable subject. */
   subject?: Maybe<CommitComment | Discussion | DiscussionComment | Issue | IssueComment | PullRequest | PullRequestReview | PullRequestReviewComment | Release | TeamDiscussion | TeamDiscussionComment>;
 };
