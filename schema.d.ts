@@ -12841,7 +12841,7 @@ export type Organization = Actor & MemberStatusable & Node & PackageOwner & Prof
   ipAllowListEntries: IpAllowListEntryConnection;
   /** The setting value for whether the organization has IP allow list configuration for installed GitHub Apps enabled. */
   ipAllowListForInstalledAppsEnabledSetting: IpAllowListForInstalledAppsEnabledSettingValue;
-  /** Check if the given account is sponsoring this user/organization. */
+  /** Whether the given account is sponsoring this user/organization. */
   isSponsoredBy: Scalars['Boolean'];
   /** True if the viewer is sponsored by this user/organization. */
   isSponsoringViewer: Scalars['Boolean'];
@@ -12937,15 +12937,9 @@ export type Organization = Actor & MemberStatusable & Node & PackageOwner & Prof
   sponsorsActivities: SponsorsActivityConnection;
   /** The GitHub Sponsors listing for this user or organization. */
   sponsorsListing?: Maybe<SponsorsListing>;
-  /**
-   * The sponsorship from the viewer to this user/organization; that is, the
-   * sponsorship where you're the sponsor. Only returns a sponsorship if it is active.
-   */
+  /** The sponsorship from the viewer to this user/organization; that is, the sponsorship where you're the sponsor. */
   sponsorshipForViewerAsSponsor?: Maybe<Sponsorship>;
-  /**
-   * The sponsorship from this user/organization to the viewer; that is, the
-   * sponsorship you're receiving. Only returns a sponsorship if it is active.
-   */
+  /** The sponsorship from this user/organization to the viewer; that is, the sponsorship you're receiving. */
   sponsorshipForViewerAsSponsorable?: Maybe<Sponsorship>;
   /** List of sponsorship updates sent from this sponsorable to sponsors. */
   sponsorshipNewsletters: SponsorshipNewsletterConnection;
@@ -13277,6 +13271,18 @@ export type OrganizationSponsorsActivitiesArgs = {
   period?: InputMaybe<SponsorsActivityPeriod>;
   since?: InputMaybe<Scalars['DateTime']>;
   until?: InputMaybe<Scalars['DateTime']>;
+};
+
+
+/** An account on GitHub, with one or more owners, that has repositories, members and teams. */
+export type OrganizationSponsorshipForViewerAsSponsorArgs = {
+  activeOnly?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** An account on GitHub, with one or more owners, that has repositories, members and teams. */
+export type OrganizationSponsorshipForViewerAsSponsorableArgs = {
+  activeOnly?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -22254,7 +22260,7 @@ export type Sponsorable = {
   estimatedNextSponsorsPayoutInCents: Scalars['Int'];
   /** True if this user/organization has a GitHub Sponsors listing. */
   hasSponsorsListing: Scalars['Boolean'];
-  /** Check if the given account is sponsoring this user/organization. */
+  /** Whether the given account is sponsoring this user/organization. */
   isSponsoredBy: Scalars['Boolean'];
   /** True if the viewer is sponsored by this user/organization. */
   isSponsoringViewer: Scalars['Boolean'];
@@ -22268,15 +22274,9 @@ export type Sponsorable = {
   sponsorsActivities: SponsorsActivityConnection;
   /** The GitHub Sponsors listing for this user or organization. */
   sponsorsListing?: Maybe<SponsorsListing>;
-  /**
-   * The sponsorship from the viewer to this user/organization; that is, the
-   * sponsorship where you're the sponsor. Only returns a sponsorship if it is active.
-   */
+  /** The sponsorship from the viewer to this user/organization; that is, the sponsorship where you're the sponsor. */
   sponsorshipForViewerAsSponsor?: Maybe<Sponsorship>;
-  /**
-   * The sponsorship from this user/organization to the viewer; that is, the
-   * sponsorship you're receiving. Only returns a sponsorship if it is active.
-   */
+  /** The sponsorship from this user/organization to the viewer; that is, the sponsorship you're receiving. */
   sponsorshipForViewerAsSponsorable?: Maybe<Sponsorship>;
   /** List of sponsorship updates sent from this sponsorable to sponsors. */
   sponsorshipNewsletters: SponsorshipNewsletterConnection;
@@ -22330,6 +22330,18 @@ export type SponsorableSponsorsActivitiesArgs = {
   period?: InputMaybe<SponsorsActivityPeriod>;
   since?: InputMaybe<Scalars['DateTime']>;
   until?: InputMaybe<Scalars['DateTime']>;
+};
+
+
+/** Entities that can sponsor or be sponsored through GitHub Sponsors. */
+export type SponsorableSponsorshipForViewerAsSponsorArgs = {
+  activeOnly?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** Entities that can sponsor or be sponsored through GitHub Sponsors. */
+export type SponsorableSponsorshipForViewerAsSponsorableArgs = {
+  activeOnly?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -23241,10 +23253,15 @@ export type Sponsorship = Node & {
   /** Identifies the date and time when the object was created. */
   createdAt: Scalars['DateTime'];
   id: Scalars['ID'];
+  /**
+   * Whether the sponsorship is active. False implies the sponsor is a past sponsor
+   * of the maintainer, while true implies they are a current sponsor.
+   */
+  isActive: Scalars['Boolean'];
   /** Whether this sponsorship represents a one-time payment versus a recurring sponsorship. */
   isOneTimePayment: Scalars['Boolean'];
   /**
-   * Check if the sponsor has chosen to receive sponsorship update emails sent from
+   * Whether the sponsor has chosen to receive sponsorship update emails sent from
    * the sponsorable. Only returns a non-null value when the viewer has permission to know this.
    */
   isSponsorOptedIntoEmail?: Maybe<Scalars['Boolean']>;
@@ -26763,7 +26780,7 @@ export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner
   isHireable: Scalars['Boolean'];
   /** Whether or not this user is a site administrator. */
   isSiteAdmin: Scalars['Boolean'];
-  /** Check if the given account is sponsoring this user/organization. */
+  /** Whether the given account is sponsoring this user/organization. */
   isSponsoredBy: Scalars['Boolean'];
   /** True if the viewer is sponsored by this user/organization. */
   isSponsoringViewer: Scalars['Boolean'];
@@ -26850,15 +26867,9 @@ export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner
   sponsorsActivities: SponsorsActivityConnection;
   /** The GitHub Sponsors listing for this user or organization. */
   sponsorsListing?: Maybe<SponsorsListing>;
-  /**
-   * The sponsorship from the viewer to this user/organization; that is, the
-   * sponsorship where you're the sponsor. Only returns a sponsorship if it is active.
-   */
+  /** The sponsorship from the viewer to this user/organization; that is, the sponsorship where you're the sponsor. */
   sponsorshipForViewerAsSponsor?: Maybe<Sponsorship>;
-  /**
-   * The sponsorship from this user/organization to the viewer; that is, the
-   * sponsorship you're receiving. Only returns a sponsorship if it is active.
-   */
+  /** The sponsorship from this user/organization to the viewer; that is, the sponsorship you're receiving. */
   sponsorshipForViewerAsSponsorable?: Maybe<Sponsorship>;
   /** List of sponsorship updates sent from this sponsorable to sponsors. */
   sponsorshipNewsletters: SponsorshipNewsletterConnection;
@@ -27251,6 +27262,18 @@ export type UserSponsorsActivitiesArgs = {
   period?: InputMaybe<SponsorsActivityPeriod>;
   since?: InputMaybe<Scalars['DateTime']>;
   until?: InputMaybe<Scalars['DateTime']>;
+};
+
+
+/** A user is an individual's account on GitHub that owns repositories and can make new content. */
+export type UserSponsorshipForViewerAsSponsorArgs = {
+  activeOnly?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** A user is an individual's account on GitHub that owns repositories and can make new content. */
+export type UserSponsorshipForViewerAsSponsorableArgs = {
+  activeOnly?: InputMaybe<Scalars['Boolean']>;
 };
 
 
