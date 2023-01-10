@@ -12955,6 +12955,12 @@ export type Organization = Actor & MemberStatusable & Node & PackageOwner & Prof
   teamsResourcePath: Scalars['URI'];
   /** The HTTP URL listing organization's teams */
   teamsUrl: Scalars['URI'];
+  /**
+   * The amount in United States cents (e.g., 500 = $5.00 USD) that this entity has
+   * spent on GitHub to fund sponsorships. Only returns a value when viewed by the
+   * user themselves or by a user who can manage sponsorships for the requested organization.
+   */
+  totalSponsorshipAmountAsSponsorInCents?: Maybe<Scalars['Int']>;
   /** The organization's Twitter username. */
   twitterUsername?: Maybe<Scalars['String']>;
   /** Identifies the date and time when the object was last updated. */
@@ -13339,6 +13345,14 @@ export type OrganizationTeamsArgs = {
   role?: InputMaybe<TeamRole>;
   rootTeamsOnly?: InputMaybe<Scalars['Boolean']>;
   userLogins?: InputMaybe<Array<Scalars['String']>>;
+};
+
+
+/** An account on GitHub, with one or more owners, that has repositories, members and teams. */
+export type OrganizationTotalSponsorshipAmountAsSponsorInCentsArgs = {
+  since?: InputMaybe<Scalars['DateTime']>;
+  sponsorableLogins?: InputMaybe<Array<Scalars['String']>>;
+  until?: InputMaybe<Scalars['DateTime']>;
 };
 
 /** An audit entry in an organization audit log. */
@@ -22284,6 +22298,12 @@ export type Sponsorable = {
   sponsorshipsAsMaintainer: SponsorshipConnection;
   /** This object's sponsorships as the sponsor. */
   sponsorshipsAsSponsor: SponsorshipConnection;
+  /**
+   * The amount in United States cents (e.g., 500 = $5.00 USD) that this entity has
+   * spent on GitHub to fund sponsorships. Only returns a value when viewed by the
+   * user themselves or by a user who can manage sponsorships for the requested organization.
+   */
+  totalSponsorshipAmountAsSponsorInCents?: Maybe<Scalars['Int']>;
   /** Whether or not the viewer is able to sponsor this user/organization. */
   viewerCanSponsor: Scalars['Boolean'];
   /** True if the viewer is sponsoring this user/organization. */
@@ -22376,6 +22396,14 @@ export type SponsorableSponsorshipsAsSponsorArgs = {
   last?: InputMaybe<Scalars['Int']>;
   maintainerLogins?: InputMaybe<Array<Scalars['String']>>;
   orderBy?: InputMaybe<SponsorshipOrder>;
+};
+
+
+/** Entities that can sponsor or be sponsored through GitHub Sponsors. */
+export type SponsorableTotalSponsorshipAmountAsSponsorInCentsArgs = {
+  since?: InputMaybe<Scalars['DateTime']>;
+  sponsorableLogins?: InputMaybe<Array<Scalars['String']>>;
+  until?: InputMaybe<Scalars['DateTime']>;
 };
 
 /** Entities that can be sponsored via GitHub Sponsors */
@@ -26883,6 +26911,12 @@ export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner
   status?: Maybe<UserStatus>;
   /** Repositories the user has contributed to, ordered by contribution rank, plus repositories the user has created */
   topRepositories: RepositoryConnection;
+  /**
+   * The amount in United States cents (e.g., 500 = $5.00 USD) that this entity has
+   * spent on GitHub to fund sponsorships. Only returns a value when viewed by the
+   * user themselves or by a user who can manage sponsorships for the requested organization.
+   */
+  totalSponsorshipAmountAsSponsorInCents?: Maybe<Scalars['Int']>;
   /** The user's Twitter username. */
   twitterUsername?: Maybe<Scalars['String']>;
   /** Identifies the date and time when the object was last updated. */
@@ -27330,6 +27364,14 @@ export type UserTopRepositoriesArgs = {
   last?: InputMaybe<Scalars['Int']>;
   orderBy: RepositoryOrder;
   since?: InputMaybe<Scalars['DateTime']>;
+};
+
+
+/** A user is an individual's account on GitHub that owns repositories and can make new content. */
+export type UserTotalSponsorshipAmountAsSponsorInCentsArgs = {
+  since?: InputMaybe<Scalars['DateTime']>;
+  sponsorableLogins?: InputMaybe<Array<Scalars['String']>>;
+  until?: InputMaybe<Scalars['DateTime']>;
 };
 
 
