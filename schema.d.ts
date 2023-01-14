@@ -12951,9 +12951,9 @@ export type Organization = Actor & MemberStatusable & Node & PackageOwner & Prof
   sponsorshipForViewerAsSponsorable?: Maybe<Sponsorship>;
   /** List of sponsorship updates sent from this sponsorable to sponsors. */
   sponsorshipNewsletters: SponsorshipNewsletterConnection;
-  /** This object's sponsorships as the maintainer. */
+  /** The sponsorships where this user or organization is the maintainer receiving the funds. */
   sponsorshipsAsMaintainer: SponsorshipConnection;
-  /** This object's sponsorships as the sponsor. */
+  /** The sponsorships where this user or organization is the funder. */
   sponsorshipsAsSponsor: SponsorshipConnection;
   /** Find an organization's team by its slug. */
   team?: Maybe<Team>;
@@ -22345,9 +22345,9 @@ export type Sponsorable = {
   sponsorshipForViewerAsSponsorable?: Maybe<Sponsorship>;
   /** List of sponsorship updates sent from this sponsorable to sponsors. */
   sponsorshipNewsletters: SponsorshipNewsletterConnection;
-  /** This object's sponsorships as the maintainer. */
+  /** The sponsorships where this user or organization is the maintainer receiving the funds. */
   sponsorshipsAsMaintainer: SponsorshipConnection;
-  /** This object's sponsorships as the sponsor. */
+  /** The sponsorships where this user or organization is the funder. */
   sponsorshipsAsSponsor: SponsorshipConnection;
   /**
    * The amount in United States cents (e.g., 500 = $5.00 USD) that this entity has
@@ -23155,7 +23155,7 @@ export type SponsorsListing = Node & {
   slug: Scalars['String'];
   /** The entity this listing represents who can be sponsored on GitHub Sponsors. */
   sponsorable: Organization | User;
-  /** The published tiers for this GitHub Sponsors listing. */
+  /** The tiers for this GitHub Sponsors profile. */
   tiers?: Maybe<SponsorsTierConnection>;
   /** The HTTP URL for this Sponsors listing. */
   url: Scalars['URI'];
@@ -23173,6 +23173,7 @@ export type SponsorsListingTiersArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  includeUnpublished?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<SponsorsTierOrder>;
 };
@@ -26975,9 +26976,9 @@ export type User = Actor & Node & PackageOwner & ProfileOwner & ProjectNextOwner
   sponsorshipForViewerAsSponsorable?: Maybe<Sponsorship>;
   /** List of sponsorship updates sent from this sponsorable to sponsors. */
   sponsorshipNewsletters: SponsorshipNewsletterConnection;
-  /** This object's sponsorships as the maintainer. */
+  /** The sponsorships where this user or organization is the maintainer receiving the funds. */
   sponsorshipsAsMaintainer: SponsorshipConnection;
-  /** This object's sponsorships as the sponsor. */
+  /** The sponsorships where this user or organization is the funder. */
   sponsorshipsAsSponsor: SponsorshipConnection;
   /** Repositories the user has starred. */
   starredRepositories: StarredRepositoryConnection;
