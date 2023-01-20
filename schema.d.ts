@@ -13427,6 +13427,7 @@ export type OrganizationsHovercardContextRelevantOrganizationsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<OrganizationOrder>;
 };
 
 /** Information for an uploaded package. */
@@ -25839,6 +25840,7 @@ export type UserOrganizationsArgs = {
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<OrganizationOrder>;
 };
 
 
