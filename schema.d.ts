@@ -27036,6 +27036,8 @@ export type Workflow = Node & {
   name: Scalars['String'];
   /** The runs of the workflow. */
   runs: WorkflowRunConnection;
+  /** The state of the workflow. */
+  state: WorkflowState;
   /** Identifies the date and time when the object was last updated. */
   updatedAt: Scalars['DateTime'];
 };
@@ -27130,3 +27132,16 @@ export type WorkflowRunOrder = {
 export type WorkflowRunOrderField =
   /** Order workflow runs by most recently created */
   | 'CREATED_AT';
+
+/** The possible states for a workflow. */
+export type WorkflowState =
+  /** The workflow is active. */
+  | 'ACTIVE'
+  /** The workflow was deleted from the git repository. */
+  | 'DELETED'
+  /** The workflow was disabled by default on a fork. */
+  | 'DISABLED_FORK'
+  /** The workflow was disabled for inactivity in the repository. */
+  | 'DISABLED_INACTIVITY'
+  /** The workflow was disabled manually. */
+  | 'DISABLED_MANUALLY';
