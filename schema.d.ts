@@ -4954,6 +4954,8 @@ export type DeploymentState =
   | 'PENDING'
   /** The deployment has queued */
   | 'QUEUED'
+  /** The deployment was successful. */
+  | 'SUCCESS'
   /** The deployment is waiting. */
   | 'WAITING';
 
