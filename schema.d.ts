@@ -12,6 +12,11 @@ export type Scalars = {
   Float: number;
   /** A (potentially binary) string encoded using base64. */
   Base64String: string;
+  /**
+   * Represents non-fractional signed whole numeric values. Since the value may
+   * exceed the size of a 32-bit integer, it's encoded as a string.
+   */
+  BigInt: any;
   /** An ISO-8601 encoded date string. */
   Date: string;
   /** An ISO-8601 encoded UTC date string. */
@@ -473,8 +478,11 @@ export type AddPullRequestReviewThreadInput = {
   body: Scalars['String'];
   /** A unique identifier for the client performing the mutation. */
   clientMutationId?: InputMaybe<Scalars['String']>;
-  /** The line of the blob to which the thread refers. The end of the line range for multi-line comments. */
-  line: Scalars['Int'];
+  /**
+   * The line of the blob to which the thread refers, required for line-level
+   * threads. The end of the line range for multi-line comments.
+   */
+  line?: InputMaybe<Scalars['Int']>;
   /** Path to the file being commented on. */
   path: Scalars['String'];
   /** The node ID of the pull request reviewing */
@@ -7939,6 +7947,8 @@ export type Issue = Assignable & Closable & Comment & Labelable & Lockable & Nod
   databaseId?: Maybe<Scalars['Int']>;
   /** The actor who edited the comment. */
   editor?: Maybe<Bot | EnterpriseUserAccount | Mannequin | Organization | User>;
+  /** Identifies the primary key from the database as a BigInt. */
+  fullDatabaseId?: Maybe<Scalars['BigInt']>;
   /** The hovercard information for this issue */
   hovercard: Hovercard;
   id: Scalars['ID'];
@@ -8209,6 +8219,8 @@ export type IssueComment = Comment & Deletable & Minimizable & Node & Reactable 
   databaseId?: Maybe<Scalars['Int']>;
   /** The actor who edited the comment. */
   editor?: Maybe<Bot | EnterpriseUserAccount | Mannequin | Organization | User>;
+  /** Identifies the primary key from the database as a BigInt. */
+  fullDatabaseId?: Maybe<Scalars['BigInt']>;
   id: Scalars['ID'];
   /** Check if this comment was edited and includes an edit with the creation data */
   includesCreatedEdit: Scalars['Boolean'];
@@ -14300,6 +14312,8 @@ export type PinnedIssue = Node & {
   __typename?: 'PinnedIssue';
   /** Identifies the primary key from the database. */
   databaseId?: Maybe<Scalars['Int']>;
+  /** Identifies the primary key from the database as a BigInt. */
+  fullDatabaseId?: Maybe<Scalars['BigInt']>;
   id: Scalars['ID'];
   /** The issue that was pinned. */
   issue: Issue;
