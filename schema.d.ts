@@ -17870,7 +17870,7 @@ export type Query = {
   /** Lookup a repository owner (ie. either a User or an Organization) by login. */
   repositoryOwner?: Maybe<Organization | User>;
   /** Lookup resource by a URL. */
-  resource?: Maybe<Bot | CheckRun | ClosedEvent | Commit | ConvertToDraftEvent | CrossReferencedEvent | Gist | Issue | Mannequin | MergedEvent | Milestone | Organization | PullRequest | PullRequestCommit | ReadyForReviewEvent | Release | Repository | RepositoryTopic | ReviewDismissedEvent | TeamDiscussion | TeamDiscussionComment | User | WorkflowRun>;
+  resource?: Maybe<Bot | CheckRun | ClosedEvent | Commit | ConvertToDraftEvent | CrossReferencedEvent | Gist | Issue | Mannequin | MergedEvent | Milestone | Organization | PullRequest | PullRequestCommit | ReadyForReviewEvent | Release | Repository | RepositoryTopic | ReviewDismissedEvent | TeamDiscussion | TeamDiscussionComment | User | Workflow | WorkflowRun>;
   /** Perform a search across resources, returning a maximum of 1,000 results. */
   search: SearchResultItemConnection;
   /** GitHub Security Advisories */
@@ -28092,7 +28092,7 @@ export type Votable = {
 };
 
 /** A workflow contains meta information about an Actions workflow file. */
-export type Workflow = Node & {
+export type Workflow = Node & UniformResourceLocatable & {
   __typename?: 'Workflow';
   /** Identifies the date and time when the object was created. */
   createdAt: Scalars['DateTime'];
@@ -28101,12 +28101,16 @@ export type Workflow = Node & {
   id: Scalars['ID'];
   /** The name of the workflow. */
   name: Scalars['String'];
+  /** The HTTP path for this workflow */
+  resourcePath: Scalars['URI'];
   /** The runs of the workflow. */
   runs: WorkflowRunConnection;
   /** The state of the workflow. */
   state: WorkflowState;
   /** Identifies the date and time when the object was last updated. */
   updatedAt: Scalars['DateTime'];
+  /** The HTTP URL for this workflow */
+  url: Scalars['URI'];
 };
 
 
