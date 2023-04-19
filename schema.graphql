@@ -56919,7 +56919,7 @@ interface Votable {
 """
 A workflow contains meta information about an Actions workflow file.
 """
-type Workflow implements Node {
+type Workflow implements Node & UniformResourceLocatable {
   """
   Identifies the date and time when the object was created.
   """
@@ -56935,6 +56935,11 @@ type Workflow implements Node {
   The name of the workflow.
   """
   name: String!
+
+  """
+  The HTTP path for this workflow
+  """
+  resourcePath: URI!
 
   """
   The runs of the workflow.
@@ -56975,6 +56980,11 @@ type Workflow implements Node {
   Identifies the date and time when the object was last updated.
   """
   updatedAt: DateTime!
+
+  """
+  The HTTP URL for this workflow
+  """
+  url: URI!
 }
 
 """
