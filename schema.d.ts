@@ -8257,7 +8257,7 @@ export type IpAllowListForInstalledAppsEnabledSettingValue =
 export type IpAllowListOwner = App | Enterprise | Organization;
 
 /** An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project. */
-export type Issue = Assignable & Closable & Comment & Labelable & Lockable & Node & ProjectV2Owner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
+export type Issue = Assignable & Closable & Comment & Deletable & Labelable & Lockable & Node & ProjectV2Owner & Reactable & RepositoryNode & Subscribable & UniformResourceLocatable & Updatable & UpdatableComment & {
   __typename?: 'Issue';
   /** Reason that the conversation was locked. */
   activeLockReason?: Maybe<LockReason>;
@@ -8363,6 +8363,8 @@ export type Issue = Assignable & Closable & Comment & Labelable & Lockable & Nod
   userContentEdits?: Maybe<UserContentEditConnection>;
   /** Indicates if the object can be closed by the viewer. */
   viewerCanClose: Scalars['Boolean'];
+  /** Check if the current viewer can delete this object. */
+  viewerCanDelete: Scalars['Boolean'];
   /** Can user react to this subject */
   viewerCanReact: Scalars['Boolean'];
   /** Indicates if the object can be reopened by the viewer. */
@@ -10045,6 +10047,11 @@ export type Migration = {
   sourceUrl: Scalars['URI'];
   /** The migration state. */
   state: MigrationState;
+  /**
+   * The number of warnings encountered for this migration. To review the warnings,
+   * check the [Migration Log](https://docs.github.com/en/migrations/using-github-enterprise-importer/completing-your-migration-with-github-enterprise-importer/accessing-your-migration-logs-for-github-enterprise-importer).
+   */
+  warningsCount: Scalars['Int'];
 };
 
 /** A GitHub Enterprise Importer (GEI) migration source. */
@@ -13654,6 +13661,8 @@ export type Organization = Actor & AnnouncementBanner & MemberStatusable & Node 
   requiresTwoFactorAuthentication?: Maybe<Scalars['Boolean']>;
   /** The HTTP path for this organization. */
   resourcePath: Scalars['URI'];
+  /** Returns a single ruleset from the current organization by ID. */
+  ruleset?: Maybe<RepositoryRuleset>;
   /** A list of rulesets for this organization. */
   rulesets?: Maybe<RepositoryRulesetConnection>;
   /**
@@ -13959,6 +13968,12 @@ export type OrganizationRepositoryMigrationsArgs = {
   orderBy?: InputMaybe<RepositoryMigrationOrder>;
   repositoryName?: InputMaybe<Scalars['String']>;
   state?: InputMaybe<MigrationState>;
+};
+
+
+/** An account on GitHub, with one or more owners, that has repositories, members and teams. */
+export type OrganizationRulesetArgs = {
+  databaseId: Scalars['Int'];
 };
 
 
@@ -14352,10 +14367,14 @@ export type OrganizationMigration = Node & {
 export type OrganizationMigrationState =
   /** The Octoshift migration has failed. */
   | 'FAILED'
+  /** The Octoshift migration has invalid credentials. */
+  | 'FAILED_VALIDATION'
   /** The Octoshift migration is in progress. */
   | 'IN_PROGRESS'
   /** The Octoshift migration has not started. */
   | 'NOT_STARTED'
+  /** The Octoshift migration needs to have its credentials validated. */
+  | 'PENDING_VALIDATION'
   /** The Octoshift migration is performing post repository migrations. */
   | 'POST_REPO_MIGRATION'
   /** The Octoshift migration is performing pre repository migrations. */
@@ -17224,7 +17243,7 @@ export type PullRequestOrderField =
   /** Order pull_requests by update time */
   | 'UPDATED_AT';
 
-/** Parameters to be used for the pull_request rule */
+/** Require all commits be made to a non-target branch and submitted via a pull request before they can be merged. */
 export type PullRequestParameters = {
   __typename?: 'PullRequestParameters';
   /** New, reviewable commits pushed will dismiss previous pull request review approvals. */
@@ -17239,7 +17258,7 @@ export type PullRequestParameters = {
   requiredReviewThreadResolution: Scalars['Boolean'];
 };
 
-/** Parameters to be used for the pull_request rule */
+/** Require all commits be made to a non-target branch and submitted via a pull request before they can be merged. */
 export type PullRequestParametersInput = {
   /** New, reviewable commits pushed will dismiss previous pull request review approvals. */
   dismissStaleReviewsOnPush: Scalars['Boolean'];
@@ -20377,6 +20396,8 @@ export type Repository = Node & PackageOwner & ProjectOwner & ProjectV2Recent & 
   repositoryTopics: RepositoryTopicConnection;
   /** The HTTP path for this repository */
   resourcePath: Scalars['URI'];
+  /** Returns a single ruleset from the current repository by ID. */
+  ruleset?: Maybe<RepositoryRuleset>;
   /** A list of rulesets for this repository. */
   rulesets?: Maybe<RepositoryRulesetConnection>;
   /** The security policy URL. */
@@ -20810,6 +20831,12 @@ export type RepositoryRepositoryTopicsArgs = {
 
 
 /** A repository contains the content for a project. */
+export type RepositoryRulesetArgs = {
+  databaseId: Scalars['Int'];
+};
+
+
+/** A repository contains the content for a project. */
 export type RepositoryRulesetsArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -21232,6 +21259,11 @@ export type RepositoryMigration = Migration & Node & {
   sourceUrl: Scalars['URI'];
   /** The migration state. */
   state: MigrationState;
+  /**
+   * The number of warnings encountered for this migration. To review the warnings,
+   * check the [Migration Log](https://docs.github.com/en/migrations/using-github-enterprise-importer/completing-your-migration-with-github-enterprise-importer/accessing-your-migration-logs-for-github-enterprise-importer).
+   */
+  warningsCount: Scalars['Int'];
 };
 
 /** The connection type for RepositoryMigration. */
@@ -21467,25 +21499,33 @@ export type RepositoryRuleType =
   | 'COMMIT_AUTHOR_EMAIL_PATTERN'
   /** Commit message pattern */
   | 'COMMIT_MESSAGE_PATTERN'
-  /** Creation */
+  /** Only allow users with bypass permission to create matching refs. */
   | 'CREATION'
-  /** Deletion */
+  /** Only allow users with bypass permissions to delete matching refs. */
   | 'DELETION'
-  /** Non fast forward */
+  /** Prevent users with push access from force pushing to branches. */
   | 'NON_FAST_FORWARD'
-  /** Pull request */
+  /** Require all commits be made to a non-target branch and submitted via a pull request before they can be merged. */
   | 'PULL_REQUEST'
-  /** Required deployments */
+  /**
+   * Choose which environments must be successfully deployed to before branches can
+   * be merged into a branch that matches this rule.
+   */
   | 'REQUIRED_DEPLOYMENTS'
-  /** Required linear history */
+  /** Prevent merge commits from being pushed to matching branches. */
   | 'REQUIRED_LINEAR_HISTORY'
-  /** Required signatures */
+  /** Commits pushed to matching branches must have verified signatures. */
   | 'REQUIRED_SIGNATURES'
-  /** Required status checks */
+  /**
+   * Choose which status checks must pass before branches can be merged into a
+   * branch that matches this rule. When enabled, commits must first be pushed to
+   * another branch, then merged or pushed directly to a branch that matches this
+   * rule after status checks have passed.
+   */
   | 'REQUIRED_STATUS_CHECKS'
   /** Tag name pattern */
   | 'TAG_NAME_PATTERN'
-  /** Update */
+  /** Only allow users with bypass permission to update matching refs. */
   | 'UPDATE';
 
 /** A repository ruleset. */
@@ -21497,6 +21537,8 @@ export type RepositoryRuleset = Node & {
   bypassMode: RuleBypassMode;
   /** The set of conditions that must evaluate to true for this ruleset to apply */
   conditions: RepositoryRuleConditions;
+  /** Identifies the date and time when the object was created. */
+  createdAt: Scalars['DateTime'];
   /** Identifies the primary key from the database. */
   databaseId?: Maybe<Scalars['Int']>;
   /** The enforcement level of this ruleset */
@@ -21510,6 +21552,8 @@ export type RepositoryRuleset = Node & {
   source: RuleSource;
   /** Target of the ruleset. */
   target?: Maybe<RepositoryRulesetTarget>;
+  /** Identifies the date and time when the object was last updated. */
+  updatedAt: Scalars['DateTime'];
 };
 
 
@@ -21885,14 +21929,20 @@ export type RequirableByPullRequestIsRequiredArgs = {
   pullRequestNumber?: InputMaybe<Scalars['Int']>;
 };
 
-/** Parameters to be used for the required_deployments rule */
+/**
+ * Choose which environments must be successfully deployed to before branches can
+ * be merged into a branch that matches this rule.
+ */
 export type RequiredDeploymentsParameters = {
   __typename?: 'RequiredDeploymentsParameters';
   /** The environments that must be successfully deployed to before branches can be merged. */
   requiredDeploymentEnvironments: Array<Scalars['String']>;
 };
 
-/** Parameters to be used for the required_deployments rule */
+/**
+ * Choose which environments must be successfully deployed to before branches can
+ * be merged into a branch that matches this rule.
+ */
 export type RequiredDeploymentsParametersInput = {
   /** The environments that must be successfully deployed to before branches can be merged. */
   requiredDeploymentEnvironments: Array<Scalars['String']>;
@@ -21919,7 +21969,12 @@ export type RequiredStatusCheckInput = {
   context: Scalars['String'];
 };
 
-/** Parameters to be used for the required_status_checks rule */
+/**
+ * Choose which status checks must pass before branches can be merged into a branch
+ * that matches this rule. When enabled, commits must first be pushed to another
+ * branch, then merged or pushed directly to a branch that matches this rule after
+ * status checks have passed.
+ */
 export type RequiredStatusChecksParameters = {
   __typename?: 'RequiredStatusChecksParameters';
   /** Status checks that are required. */
@@ -21932,7 +21987,12 @@ export type RequiredStatusChecksParameters = {
   strictRequiredStatusChecksPolicy: Scalars['Boolean'];
 };
 
-/** Parameters to be used for the required_status_checks rule */
+/**
+ * Choose which status checks must pass before branches can be merged into a branch
+ * that matches this rule. When enabled, commits must first be pushed to another
+ * branch, then merged or pushed directly to a branch that matches this rule after
+ * status checks have passed.
+ */
 export type RequiredStatusChecksParametersInput = {
   /** Status checks that are required. */
   requiredStatusChecks: Array<StatusCheckConfigurationInput>;
@@ -26803,14 +26863,14 @@ export type UpdateOrganizationWebCommitSignoffSettingPayload = {
   organization?: Maybe<Organization>;
 };
 
-/** Parameters to be used for the update rule */
+/** Only allow users with bypass permission to update matching refs. */
 export type UpdateParameters = {
   __typename?: 'UpdateParameters';
   /** Branch can pull changes from its upstream repository */
   updateAllowsFetchAndMerge: Scalars['Boolean'];
 };
 
-/** Parameters to be used for the update rule */
+/** Only allow users with bypass permission to update matching refs. */
 export type UpdateParametersInput = {
   /** Branch can pull changes from its upstream repository */
   updateAllowsFetchAndMerge: Scalars['Boolean'];
