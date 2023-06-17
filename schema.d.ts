@@ -169,7 +169,7 @@ export type AddCommentPayload = {
   /** The edge from the subject's comment connection. */
   commentEdge?: Maybe<IssueCommentEdge>;
   /** The subject */
-  subject?: Maybe<AddedToMergeQueueEvent | AddedToProjectEvent | App | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | Blob | Bot | BranchProtectionRule | BypassForcePushAllowance | BypassPullRequestAllowance | Cwe | CheckRun | CheckSuite | ClosedEvent | CodeOfConduct | CommentDeletedEvent | Commit | CommitComment | CommitCommentThread | Comparison | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployKey | DeployedEvent | Deployment | DeploymentEnvironmentChangedEvent | DeploymentReview | DeploymentStatus | DisconnectedEvent | Discussion | DiscussionCategory | DiscussionComment | DiscussionPoll | DiscussionPollOption | DraftIssue | Enterprise | EnterpriseAdministratorInvitation | EnterpriseIdentityProvider | EnterpriseRepositoryInfo | EnterpriseServerInstallation | EnterpriseServerUserAccount | EnterpriseServerUserAccountEmail | EnterpriseServerUserAccountsUpload | EnterpriseUserAccount | Environment | ExternalIdentity | Gist | GistComment | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IpAllowListEntry | Issue | IssueComment | Label | LabeledEvent | Language | License | LinkedBranch | LockedEvent | Mannequin | MarkedAsDuplicateEvent | MarketplaceCategory | MarketplaceListing | MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | MentionedEvent | MergeQueue | MergeQueueEntry | MergedEvent | MigrationSource | Milestone | MilestonedEvent | MovedColumnsInProjectEvent | OidcProvider | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | Organization | OrganizationIdentityProvider | OrganizationInvitation | OrganizationMigration | Package | PackageFile | PackageTag | PackageVersion | PinnedDiscussion | PinnedEvent | PinnedIssue | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | Project | ProjectCard | ProjectColumn | ProjectV2 | ProjectV2Field | ProjectV2Item | ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2IterationField | ProjectV2SingleSelectField | ProjectV2View | ProjectV2Workflow | PublicKey | PullRequest | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | PullRequestThread | Push | PushAllowance | Reaction | ReadyForReviewEvent | Ref | ReferencedEvent | Release | ReleaseAsset | RemovedFromMergeQueueEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | Repository | RepositoryInvitation | RepositoryMigration | RepositoryRule | RepositoryRuleset | RepositoryRulesetBypassActor | RepositoryTopic | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | RepositoryVulnerabilityAlert | ReviewDismissalAllowance | ReviewDismissedEvent | ReviewRequest | ReviewRequestRemovedEvent | ReviewRequestedEvent | SavedReply | SecurityAdvisory | SponsorsActivity | SponsorsListing | SponsorsListingFeaturedItem | SponsorsTier | Sponsorship | SponsorshipNewsletter | Status | StatusCheckRollup | StatusContext | SubscribedEvent | Tag | Team | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamDiscussion | TeamDiscussionComment | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry | Topic | TransferredEvent | Tree | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | User | UserBlockedEvent | UserContentEdit | UserStatus | VerifiableDomain | Workflow | WorkflowRun>;
+  subject?: Maybe<AddedToMergeQueueEvent | AddedToProjectEvent | App | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | Blob | Bot | BranchProtectionRule | BypassForcePushAllowance | BypassPullRequestAllowance | Cwe | CheckRun | CheckSuite | ClosedEvent | CodeOfConduct | CommentDeletedEvent | Commit | CommitComment | CommitCommentThread | Comparison | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployKey | DeployedEvent | Deployment | DeploymentEnvironmentChangedEvent | DeploymentReview | DeploymentStatus | DisconnectedEvent | Discussion | DiscussionCategory | DiscussionComment | DiscussionPoll | DiscussionPollOption | DraftIssue | Enterprise | EnterpriseAdministratorInvitation | EnterpriseIdentityProvider | EnterpriseRepositoryInfo | EnterpriseServerInstallation | EnterpriseServerUserAccount | EnterpriseServerUserAccountEmail | EnterpriseServerUserAccountsUpload | EnterpriseUserAccount | Environment | ExternalIdentity | Gist | GistComment | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IpAllowListEntry | Issue | IssueComment | Label | LabeledEvent | Language | License | LinkedBranch | LockedEvent | Mannequin | MarkedAsDuplicateEvent | MarketplaceCategory | MarketplaceListing | MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | MentionedEvent | MergeQueue | MergeQueueEntry | MergedEvent | MigrationSource | Milestone | MilestonedEvent | MovedColumnsInProjectEvent | OidcProvider | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | Organization | OrganizationIdentityProvider | OrganizationInvitation | OrganizationMigration | Package | PackageFile | PackageTag | PackageVersion | PinnedDiscussion | PinnedEvent | PinnedIssue | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | Project | ProjectCard | ProjectColumn | ProjectV2 | ProjectV2Field | ProjectV2Item | ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2IterationField | ProjectV2SingleSelectField | ProjectV2View | ProjectV2Workflow | PublicKey | PullRequest | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | PullRequestThread | Push | PushAllowance | Reaction | ReadyForReviewEvent | Ref | ReferencedEvent | Release | ReleaseAsset | RemovedFromMergeQueueEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | Repository | RepositoryInvitation | RepositoryMigration | RepositoryRule | RepositoryRuleset | RepositoryRulesetBypassActor | RepositoryTopic | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | RepositoryVulnerabilityAlert | ReviewDismissalAllowance | ReviewDismissedEvent | ReviewRequest | ReviewRequestRemovedEvent | ReviewRequestedEvent | SavedReply | SecurityAdvisory | SponsorsActivity | SponsorsListing | SponsorsListingFeaturedItem | SponsorsTier | Sponsorship | SponsorshipNewsletter | Status | StatusCheckRollup | StatusContext | SubscribedEvent | Tag | Team | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamDiscussion | TeamDiscussionComment | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry | Topic | TransferredEvent | Tree | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | User | UserBlockedEvent | UserContentEdit | UserStatus | VerifiableDomain | Workflow | WorkflowRun | WorkflowRunFile>;
   /** The edge from the subject's timeline connection. */
   timelineEdge?: Maybe<IssueTimelineItemEdge>;
 };
@@ -2280,7 +2280,7 @@ export type Commit = GitObject & Node & Subscribable & UniformResourceLocatable 
   /** Fetches `git blame` information. */
   blame: Blame;
   /**
-   * We recommend using the `changedFielsIfAvailable` field instead of
+   * We recommend using the `changedFilesIfAvailable` field instead of
    * `changedFiles`, as `changedFiles` will cause your request to return an error
    * if GitHub is unable to calculate the number of changed files.
    * @deprecated `changedFiles` will be removed. Use `changedFilesIfAvailable` instead. Removal on 2023-01-01 UTC.
@@ -9420,6 +9420,23 @@ export type MarkFileAsViewedPayload = {
   pullRequest?: Maybe<PullRequest>;
 };
 
+/** Autogenerated input type of MarkProjectV2AsTemplate */
+export type MarkProjectV2AsTemplateInput = {
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The ID of the Project to mark as a template. */
+  projectId: Scalars['ID'];
+};
+
+/** Autogenerated return type of MarkProjectV2AsTemplate */
+export type MarkProjectV2AsTemplatePayload = {
+  __typename?: 'MarkProjectV2AsTemplatePayload';
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: Maybe<Scalars['String']>;
+  /** The project. */
+  projectV2?: Maybe<ProjectV2>;
+};
+
 /** Autogenerated input type of MarkPullRequestReadyForReview */
 export type MarkPullRequestReadyForReviewInput = {
   /** A unique identifier for the client performing the mutation. */
@@ -10573,6 +10590,8 @@ export type Mutation = {
   markDiscussionCommentAsAnswer?: Maybe<MarkDiscussionCommentAsAnswerPayload>;
   /** Mark a pull request file as viewed */
   markFileAsViewed?: Maybe<MarkFileAsViewedPayload>;
+  /** Mark a project as a template. Note that only projects which are owned by an Organization can be marked as a template. */
+  markProjectV2AsTemplate?: Maybe<MarkProjectV2AsTemplatePayload>;
   /** Marks a pull request ready for review. */
   markPullRequestReadyForReview?: Maybe<MarkPullRequestReadyForReviewPayload>;
   /** Merge a head into a branch. */
@@ -10677,6 +10696,8 @@ export type Mutation = {
   unmarkFileAsViewed?: Maybe<UnmarkFileAsViewedPayload>;
   /** Unmark an issue as a duplicate of another issue. */
   unmarkIssueAsDuplicate?: Maybe<UnmarkIssueAsDuplicatePayload>;
+  /** Unmark a project as a template. */
+  unmarkProjectV2AsTemplate?: Maybe<UnmarkProjectV2AsTemplatePayload>;
   /** Unminimizes a comment on an Issue, Commit, Pull Request, or Gist */
   unminimizeComment?: Maybe<UnminimizeCommentPayload>;
   /** Unpin a pinned issue from a repository */
@@ -10753,6 +10774,8 @@ export type Mutation = {
   updateProjectColumn?: Maybe<UpdateProjectColumnPayload>;
   /** Updates an existing project (beta). */
   updateProjectV2?: Maybe<UpdateProjectV2Payload>;
+  /** Update the collaborators on a team or a project */
+  updateProjectV2Collaborators?: Maybe<UpdateProjectV2CollaboratorsPayload>;
   /** Updates a draft issue within a Project. */
   updateProjectV2DraftIssue?: Maybe<UpdateProjectV2DraftIssuePayload>;
   /**
@@ -11420,6 +11443,12 @@ export type MutationMarkFileAsViewedArgs = {
 
 
 /** The root query for implementing GraphQL mutations. */
+export type MutationMarkProjectV2AsTemplateArgs = {
+  input: MarkProjectV2AsTemplateInput;
+};
+
+
+/** The root query for implementing GraphQL mutations. */
 export type MutationMarkPullRequestReadyForReviewArgs = {
   input: MarkPullRequestReadyForReviewInput;
 };
@@ -11732,6 +11761,12 @@ export type MutationUnmarkIssueAsDuplicateArgs = {
 
 
 /** The root query for implementing GraphQL mutations. */
+export type MutationUnmarkProjectV2AsTemplateArgs = {
+  input: UnmarkProjectV2AsTemplateInput;
+};
+
+
+/** The root query for implementing GraphQL mutations. */
 export type MutationUnminimizeCommentArgs = {
   input: UnminimizeCommentInput;
 };
@@ -11960,6 +11995,12 @@ export type MutationUpdateProjectV2Args = {
 
 
 /** The root query for implementing GraphQL mutations. */
+export type MutationUpdateProjectV2CollaboratorsArgs = {
+  input: UpdateProjectV2CollaboratorsInput;
+};
+
+
+/** The root query for implementing GraphQL mutations. */
 export type MutationUpdateProjectV2DraftIssueArgs = {
   input: UpdateProjectV2DraftIssueInput;
 };
@@ -12120,11 +12161,11 @@ export type OidcProviderType =
 
 /** Metadata for an audit entry with action oauth_application.* */
 export type OauthApplicationAuditEntryData = {
-  /** The name of the OAuth Application. */
+  /** The name of the OAuth application. */
   oauthApplicationName?: Maybe<Scalars['String']>;
-  /** The HTTP path for the OAuth Application */
+  /** The HTTP path for the OAuth application */
   oauthApplicationResourcePath?: Maybe<Scalars['URI']>;
-  /** The HTTP URL for the OAuth Application */
+  /** The HTTP URL for the OAuth application */
   oauthApplicationUrl?: Maybe<Scalars['URI']>;
 };
 
@@ -12145,18 +12186,18 @@ export type OauthApplicationCreateAuditEntry = AuditEntry & Node & OauthApplicat
   actorResourcePath?: Maybe<Scalars['URI']>;
   /** The HTTP URL for the actor. */
   actorUrl?: Maybe<Scalars['URI']>;
-  /** The application URL of the OAuth Application. */
+  /** The application URL of the OAuth application. */
   applicationUrl?: Maybe<Scalars['URI']>;
-  /** The callback URL of the OAuth Application. */
+  /** The callback URL of the OAuth application. */
   callbackUrl?: Maybe<Scalars['URI']>;
   /** The time the action was initiated */
   createdAt: Scalars['PreciseDateTime'];
   id: Scalars['ID'];
-  /** The name of the OAuth Application. */
+  /** The name of the OAuth application. */
   oauthApplicationName?: Maybe<Scalars['String']>;
-  /** The HTTP path for the OAuth Application */
+  /** The HTTP path for the OAuth application */
   oauthApplicationResourcePath?: Maybe<Scalars['URI']>;
-  /** The HTTP URL for the OAuth Application */
+  /** The HTTP URL for the OAuth application */
   oauthApplicationUrl?: Maybe<Scalars['URI']>;
   /** The corresponding operation type for the action */
   operationType?: Maybe<OperationType>;
@@ -12168,9 +12209,9 @@ export type OauthApplicationCreateAuditEntry = AuditEntry & Node & OauthApplicat
   organizationResourcePath?: Maybe<Scalars['URI']>;
   /** The HTTP URL for the organization */
   organizationUrl?: Maybe<Scalars['URI']>;
-  /** The rate limit of the OAuth Application. */
+  /** The rate limit of the OAuth application. */
   rateLimit?: Maybe<Scalars['Int']>;
-  /** The state of the OAuth Application. */
+  /** The state of the OAuth application. */
   state?: Maybe<OauthApplicationCreateAuditEntryState>;
   /** The user affected by the action */
   user?: Maybe<User>;
@@ -12182,13 +12223,13 @@ export type OauthApplicationCreateAuditEntry = AuditEntry & Node & OauthApplicat
   userUrl?: Maybe<Scalars['URI']>;
 };
 
-/** The state of an OAuth Application when it was created. */
+/** The state of an OAuth application when it was created. */
 export type OauthApplicationCreateAuditEntryState =
-  /** The OAuth Application was active and allowed to have OAuth Accesses. */
+  /** The OAuth application was active and allowed to have OAuth Accesses. */
   | 'ACTIVE'
-  /** The OAuth Application was in the process of being deleted. */
+  /** The OAuth application was in the process of being deleted. */
   | 'PENDING_DELETION'
-  /** The OAuth Application was suspended from generating OAuth Accesses due to abuse or security concerns. */
+  /** The OAuth application was suspended from generating OAuth Accesses due to abuse or security concerns. */
   | 'SUSPENDED';
 
 /** The corresponding operation type for the action */
@@ -12868,11 +12909,11 @@ export type OrgOauthAppAccessApprovedAuditEntry = AuditEntry & Node & OauthAppli
   /** The time the action was initiated */
   createdAt: Scalars['PreciseDateTime'];
   id: Scalars['ID'];
-  /** The name of the OAuth Application. */
+  /** The name of the OAuth application. */
   oauthApplicationName?: Maybe<Scalars['String']>;
-  /** The HTTP path for the OAuth Application */
+  /** The HTTP path for the OAuth application */
   oauthApplicationResourcePath?: Maybe<Scalars['URI']>;
-  /** The HTTP URL for the OAuth Application */
+  /** The HTTP URL for the OAuth application */
   oauthApplicationUrl?: Maybe<Scalars['URI']>;
   /** The corresponding operation type for the action */
   operationType?: Maybe<OperationType>;
@@ -12914,11 +12955,11 @@ export type OrgOauthAppAccessDeniedAuditEntry = AuditEntry & Node & OauthApplica
   /** The time the action was initiated */
   createdAt: Scalars['PreciseDateTime'];
   id: Scalars['ID'];
-  /** The name of the OAuth Application. */
+  /** The name of the OAuth application. */
   oauthApplicationName?: Maybe<Scalars['String']>;
-  /** The HTTP path for the OAuth Application */
+  /** The HTTP path for the OAuth application */
   oauthApplicationResourcePath?: Maybe<Scalars['URI']>;
-  /** The HTTP URL for the OAuth Application */
+  /** The HTTP URL for the OAuth application */
   oauthApplicationUrl?: Maybe<Scalars['URI']>;
   /** The corresponding operation type for the action */
   operationType?: Maybe<OperationType>;
@@ -12960,11 +13001,11 @@ export type OrgOauthAppAccessRequestedAuditEntry = AuditEntry & Node & OauthAppl
   /** The time the action was initiated */
   createdAt: Scalars['PreciseDateTime'];
   id: Scalars['ID'];
-  /** The name of the OAuth Application. */
+  /** The name of the OAuth application. */
   oauthApplicationName?: Maybe<Scalars['String']>;
-  /** The HTTP path for the OAuth Application */
+  /** The HTTP path for the OAuth application */
   oauthApplicationResourcePath?: Maybe<Scalars['URI']>;
-  /** The HTTP URL for the OAuth Application */
+  /** The HTTP URL for the OAuth application */
   oauthApplicationUrl?: Maybe<Scalars['URI']>;
   /** The corresponding operation type for the action */
   operationType?: Maybe<OperationType>;
@@ -15583,6 +15624,41 @@ export type ProjectV2WorkflowsArgs = {
   orderBy?: InputMaybe<ProjectV2WorkflowOrder>;
 };
 
+/** Possible collaborators for a project. */
+export type ProjectV2Actor = Team | User;
+
+/** The connection type for ProjectV2Actor. */
+export type ProjectV2ActorConnection = {
+  __typename?: 'ProjectV2ActorConnection';
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<ProjectV2ActorEdge>>>;
+  /** A list of nodes. */
+  nodes?: Maybe<Array<Maybe<ProjectV2Actor>>>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** Identifies the total count of items in the connection. */
+  totalCount: Scalars['Int'];
+};
+
+/** An edge in a connection. */
+export type ProjectV2ActorEdge = {
+  __typename?: 'ProjectV2ActorEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node?: Maybe<ProjectV2Actor>;
+};
+
+/** A collaborator to update on a project. Only one of the userId or teamId should be provided. */
+export type ProjectV2Collaborator = {
+  /** The role to grant the collaborator */
+  role: ProjectV2Roles;
+  /** The ID of the team as a collaborator. */
+  teamId?: InputMaybe<Scalars['ID']>;
+  /** The ID of the user as a collaborator. */
+  userId?: InputMaybe<Scalars['ID']>;
+};
+
 /** The connection type for ProjectV2. */
 export type ProjectV2Connection = {
   __typename?: 'ProjectV2Connection';
@@ -16222,6 +16298,17 @@ export type ProjectV2RecentRecentProjectsArgs = {
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
 };
+
+/** The possible roles of a collaborator on a project. */
+export type ProjectV2Roles =
+  /** The collaborator can view, edit, and maange the settings of the project */
+  | 'ADMIN'
+  /** The collaborator has no direct access to the project */
+  | 'NONE'
+  /** The collaborator can view the project */
+  | 'READER'
+  /** The collaborator can view and edit the project */
+  | 'WRITER';
 
 /** A single select field inside a project. */
 export type ProjectV2SingleSelectField = Node & ProjectV2FieldCommon & {
@@ -18022,9 +18109,9 @@ export type Query = {
   /** Return information about the GitHub instance */
   meta: GitHubMetadata;
   /** Fetches an object given its ID. */
-  node?: Maybe<AddedToMergeQueueEvent | AddedToProjectEvent | App | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | Blob | Bot | BranchProtectionRule | BypassForcePushAllowance | BypassPullRequestAllowance | Cwe | CheckRun | CheckSuite | ClosedEvent | CodeOfConduct | CommentDeletedEvent | Commit | CommitComment | CommitCommentThread | Comparison | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployKey | DeployedEvent | Deployment | DeploymentEnvironmentChangedEvent | DeploymentReview | DeploymentStatus | DisconnectedEvent | Discussion | DiscussionCategory | DiscussionComment | DiscussionPoll | DiscussionPollOption | DraftIssue | Enterprise | EnterpriseAdministratorInvitation | EnterpriseIdentityProvider | EnterpriseRepositoryInfo | EnterpriseServerInstallation | EnterpriseServerUserAccount | EnterpriseServerUserAccountEmail | EnterpriseServerUserAccountsUpload | EnterpriseUserAccount | Environment | ExternalIdentity | Gist | GistComment | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IpAllowListEntry | Issue | IssueComment | Label | LabeledEvent | Language | License | LinkedBranch | LockedEvent | Mannequin | MarkedAsDuplicateEvent | MarketplaceCategory | MarketplaceListing | MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | MentionedEvent | MergeQueue | MergeQueueEntry | MergedEvent | MigrationSource | Milestone | MilestonedEvent | MovedColumnsInProjectEvent | OidcProvider | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | Organization | OrganizationIdentityProvider | OrganizationInvitation | OrganizationMigration | Package | PackageFile | PackageTag | PackageVersion | PinnedDiscussion | PinnedEvent | PinnedIssue | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | Project | ProjectCard | ProjectColumn | ProjectV2 | ProjectV2Field | ProjectV2Item | ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2IterationField | ProjectV2SingleSelectField | ProjectV2View | ProjectV2Workflow | PublicKey | PullRequest | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | PullRequestThread | Push | PushAllowance | Reaction | ReadyForReviewEvent | Ref | ReferencedEvent | Release | ReleaseAsset | RemovedFromMergeQueueEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | Repository | RepositoryInvitation | RepositoryMigration | RepositoryRule | RepositoryRuleset | RepositoryRulesetBypassActor | RepositoryTopic | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | RepositoryVulnerabilityAlert | ReviewDismissalAllowance | ReviewDismissedEvent | ReviewRequest | ReviewRequestRemovedEvent | ReviewRequestedEvent | SavedReply | SecurityAdvisory | SponsorsActivity | SponsorsListing | SponsorsListingFeaturedItem | SponsorsTier | Sponsorship | SponsorshipNewsletter | Status | StatusCheckRollup | StatusContext | SubscribedEvent | Tag | Team | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamDiscussion | TeamDiscussionComment | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry | Topic | TransferredEvent | Tree | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | User | UserBlockedEvent | UserContentEdit | UserStatus | VerifiableDomain | Workflow | WorkflowRun>;
+  node?: Maybe<AddedToMergeQueueEvent | AddedToProjectEvent | App | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | Blob | Bot | BranchProtectionRule | BypassForcePushAllowance | BypassPullRequestAllowance | Cwe | CheckRun | CheckSuite | ClosedEvent | CodeOfConduct | CommentDeletedEvent | Commit | CommitComment | CommitCommentThread | Comparison | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployKey | DeployedEvent | Deployment | DeploymentEnvironmentChangedEvent | DeploymentReview | DeploymentStatus | DisconnectedEvent | Discussion | DiscussionCategory | DiscussionComment | DiscussionPoll | DiscussionPollOption | DraftIssue | Enterprise | EnterpriseAdministratorInvitation | EnterpriseIdentityProvider | EnterpriseRepositoryInfo | EnterpriseServerInstallation | EnterpriseServerUserAccount | EnterpriseServerUserAccountEmail | EnterpriseServerUserAccountsUpload | EnterpriseUserAccount | Environment | ExternalIdentity | Gist | GistComment | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IpAllowListEntry | Issue | IssueComment | Label | LabeledEvent | Language | License | LinkedBranch | LockedEvent | Mannequin | MarkedAsDuplicateEvent | MarketplaceCategory | MarketplaceListing | MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | MentionedEvent | MergeQueue | MergeQueueEntry | MergedEvent | MigrationSource | Milestone | MilestonedEvent | MovedColumnsInProjectEvent | OidcProvider | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | Organization | OrganizationIdentityProvider | OrganizationInvitation | OrganizationMigration | Package | PackageFile | PackageTag | PackageVersion | PinnedDiscussion | PinnedEvent | PinnedIssue | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | Project | ProjectCard | ProjectColumn | ProjectV2 | ProjectV2Field | ProjectV2Item | ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2IterationField | ProjectV2SingleSelectField | ProjectV2View | ProjectV2Workflow | PublicKey | PullRequest | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | PullRequestThread | Push | PushAllowance | Reaction | ReadyForReviewEvent | Ref | ReferencedEvent | Release | ReleaseAsset | RemovedFromMergeQueueEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | Repository | RepositoryInvitation | RepositoryMigration | RepositoryRule | RepositoryRuleset | RepositoryRulesetBypassActor | RepositoryTopic | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | RepositoryVulnerabilityAlert | ReviewDismissalAllowance | ReviewDismissedEvent | ReviewRequest | ReviewRequestRemovedEvent | ReviewRequestedEvent | SavedReply | SecurityAdvisory | SponsorsActivity | SponsorsListing | SponsorsListingFeaturedItem | SponsorsTier | Sponsorship | SponsorshipNewsletter | Status | StatusCheckRollup | StatusContext | SubscribedEvent | Tag | Team | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamDiscussion | TeamDiscussionComment | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry | Topic | TransferredEvent | Tree | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | User | UserBlockedEvent | UserContentEdit | UserStatus | VerifiableDomain | Workflow | WorkflowRun | WorkflowRunFile>;
   /** Lookup nodes by a list of IDs. */
-  nodes: Array<Maybe<AddedToMergeQueueEvent | AddedToProjectEvent | App | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | Blob | Bot | BranchProtectionRule | BypassForcePushAllowance | BypassPullRequestAllowance | Cwe | CheckRun | CheckSuite | ClosedEvent | CodeOfConduct | CommentDeletedEvent | Commit | CommitComment | CommitCommentThread | Comparison | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployKey | DeployedEvent | Deployment | DeploymentEnvironmentChangedEvent | DeploymentReview | DeploymentStatus | DisconnectedEvent | Discussion | DiscussionCategory | DiscussionComment | DiscussionPoll | DiscussionPollOption | DraftIssue | Enterprise | EnterpriseAdministratorInvitation | EnterpriseIdentityProvider | EnterpriseRepositoryInfo | EnterpriseServerInstallation | EnterpriseServerUserAccount | EnterpriseServerUserAccountEmail | EnterpriseServerUserAccountsUpload | EnterpriseUserAccount | Environment | ExternalIdentity | Gist | GistComment | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IpAllowListEntry | Issue | IssueComment | Label | LabeledEvent | Language | License | LinkedBranch | LockedEvent | Mannequin | MarkedAsDuplicateEvent | MarketplaceCategory | MarketplaceListing | MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | MentionedEvent | MergeQueue | MergeQueueEntry | MergedEvent | MigrationSource | Milestone | MilestonedEvent | MovedColumnsInProjectEvent | OidcProvider | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | Organization | OrganizationIdentityProvider | OrganizationInvitation | OrganizationMigration | Package | PackageFile | PackageTag | PackageVersion | PinnedDiscussion | PinnedEvent | PinnedIssue | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | Project | ProjectCard | ProjectColumn | ProjectV2 | ProjectV2Field | ProjectV2Item | ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2IterationField | ProjectV2SingleSelectField | ProjectV2View | ProjectV2Workflow | PublicKey | PullRequest | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | PullRequestThread | Push | PushAllowance | Reaction | ReadyForReviewEvent | Ref | ReferencedEvent | Release | ReleaseAsset | RemovedFromMergeQueueEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | Repository | RepositoryInvitation | RepositoryMigration | RepositoryRule | RepositoryRuleset | RepositoryRulesetBypassActor | RepositoryTopic | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | RepositoryVulnerabilityAlert | ReviewDismissalAllowance | ReviewDismissedEvent | ReviewRequest | ReviewRequestRemovedEvent | ReviewRequestedEvent | SavedReply | SecurityAdvisory | SponsorsActivity | SponsorsListing | SponsorsListingFeaturedItem | SponsorsTier | Sponsorship | SponsorshipNewsletter | Status | StatusCheckRollup | StatusContext | SubscribedEvent | Tag | Team | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamDiscussion | TeamDiscussionComment | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry | Topic | TransferredEvent | Tree | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | User | UserBlockedEvent | UserContentEdit | UserStatus | VerifiableDomain | Workflow | WorkflowRun>>;
+  nodes: Array<Maybe<AddedToMergeQueueEvent | AddedToProjectEvent | App | AssignedEvent | AutoMergeDisabledEvent | AutoMergeEnabledEvent | AutoRebaseEnabledEvent | AutoSquashEnabledEvent | AutomaticBaseChangeFailedEvent | AutomaticBaseChangeSucceededEvent | BaseRefChangedEvent | BaseRefDeletedEvent | BaseRefForcePushedEvent | Blob | Bot | BranchProtectionRule | BypassForcePushAllowance | BypassPullRequestAllowance | Cwe | CheckRun | CheckSuite | ClosedEvent | CodeOfConduct | CommentDeletedEvent | Commit | CommitComment | CommitCommentThread | Comparison | ConnectedEvent | ConvertToDraftEvent | ConvertedNoteToIssueEvent | ConvertedToDiscussionEvent | CrossReferencedEvent | DemilestonedEvent | DeployKey | DeployedEvent | Deployment | DeploymentEnvironmentChangedEvent | DeploymentReview | DeploymentStatus | DisconnectedEvent | Discussion | DiscussionCategory | DiscussionComment | DiscussionPoll | DiscussionPollOption | DraftIssue | Enterprise | EnterpriseAdministratorInvitation | EnterpriseIdentityProvider | EnterpriseRepositoryInfo | EnterpriseServerInstallation | EnterpriseServerUserAccount | EnterpriseServerUserAccountEmail | EnterpriseServerUserAccountsUpload | EnterpriseUserAccount | Environment | ExternalIdentity | Gist | GistComment | HeadRefDeletedEvent | HeadRefForcePushedEvent | HeadRefRestoredEvent | IpAllowListEntry | Issue | IssueComment | Label | LabeledEvent | Language | License | LinkedBranch | LockedEvent | Mannequin | MarkedAsDuplicateEvent | MarketplaceCategory | MarketplaceListing | MembersCanDeleteReposClearAuditEntry | MembersCanDeleteReposDisableAuditEntry | MembersCanDeleteReposEnableAuditEntry | MentionedEvent | MergeQueue | MergeQueueEntry | MergedEvent | MigrationSource | Milestone | MilestonedEvent | MovedColumnsInProjectEvent | OidcProvider | OauthApplicationCreateAuditEntry | OrgAddBillingManagerAuditEntry | OrgAddMemberAuditEntry | OrgBlockUserAuditEntry | OrgConfigDisableCollaboratorsOnlyAuditEntry | OrgConfigEnableCollaboratorsOnlyAuditEntry | OrgCreateAuditEntry | OrgDisableOauthAppRestrictionsAuditEntry | OrgDisableSamlAuditEntry | OrgDisableTwoFactorRequirementAuditEntry | OrgEnableOauthAppRestrictionsAuditEntry | OrgEnableSamlAuditEntry | OrgEnableTwoFactorRequirementAuditEntry | OrgInviteMemberAuditEntry | OrgInviteToBusinessAuditEntry | OrgOauthAppAccessApprovedAuditEntry | OrgOauthAppAccessDeniedAuditEntry | OrgOauthAppAccessRequestedAuditEntry | OrgRemoveBillingManagerAuditEntry | OrgRemoveMemberAuditEntry | OrgRemoveOutsideCollaboratorAuditEntry | OrgRestoreMemberAuditEntry | OrgUnblockUserAuditEntry | OrgUpdateDefaultRepositoryPermissionAuditEntry | OrgUpdateMemberAuditEntry | OrgUpdateMemberRepositoryCreationPermissionAuditEntry | OrgUpdateMemberRepositoryInvitationPermissionAuditEntry | Organization | OrganizationIdentityProvider | OrganizationInvitation | OrganizationMigration | Package | PackageFile | PackageTag | PackageVersion | PinnedDiscussion | PinnedEvent | PinnedIssue | PrivateRepositoryForkingDisableAuditEntry | PrivateRepositoryForkingEnableAuditEntry | Project | ProjectCard | ProjectColumn | ProjectV2 | ProjectV2Field | ProjectV2Item | ProjectV2ItemFieldDateValue | ProjectV2ItemFieldIterationValue | ProjectV2ItemFieldNumberValue | ProjectV2ItemFieldSingleSelectValue | ProjectV2ItemFieldTextValue | ProjectV2IterationField | ProjectV2SingleSelectField | ProjectV2View | ProjectV2Workflow | PublicKey | PullRequest | PullRequestCommit | PullRequestCommitCommentThread | PullRequestReview | PullRequestReviewComment | PullRequestReviewThread | PullRequestThread | Push | PushAllowance | Reaction | ReadyForReviewEvent | Ref | ReferencedEvent | Release | ReleaseAsset | RemovedFromMergeQueueEvent | RemovedFromProjectEvent | RenamedTitleEvent | ReopenedEvent | RepoAccessAuditEntry | RepoAddMemberAuditEntry | RepoAddTopicAuditEntry | RepoArchivedAuditEntry | RepoChangeMergeSettingAuditEntry | RepoConfigDisableAnonymousGitAccessAuditEntry | RepoConfigDisableCollaboratorsOnlyAuditEntry | RepoConfigDisableContributorsOnlyAuditEntry | RepoConfigDisableSockpuppetDisallowedAuditEntry | RepoConfigEnableAnonymousGitAccessAuditEntry | RepoConfigEnableCollaboratorsOnlyAuditEntry | RepoConfigEnableContributorsOnlyAuditEntry | RepoConfigEnableSockpuppetDisallowedAuditEntry | RepoConfigLockAnonymousGitAccessAuditEntry | RepoConfigUnlockAnonymousGitAccessAuditEntry | RepoCreateAuditEntry | RepoDestroyAuditEntry | RepoRemoveMemberAuditEntry | RepoRemoveTopicAuditEntry | Repository | RepositoryInvitation | RepositoryMigration | RepositoryRule | RepositoryRuleset | RepositoryRulesetBypassActor | RepositoryTopic | RepositoryVisibilityChangeDisableAuditEntry | RepositoryVisibilityChangeEnableAuditEntry | RepositoryVulnerabilityAlert | ReviewDismissalAllowance | ReviewDismissedEvent | ReviewRequest | ReviewRequestRemovedEvent | ReviewRequestedEvent | SavedReply | SecurityAdvisory | SponsorsActivity | SponsorsListing | SponsorsListingFeaturedItem | SponsorsTier | Sponsorship | SponsorshipNewsletter | Status | StatusCheckRollup | StatusContext | SubscribedEvent | Tag | Team | TeamAddMemberAuditEntry | TeamAddRepositoryAuditEntry | TeamChangeParentTeamAuditEntry | TeamDiscussion | TeamDiscussionComment | TeamRemoveMemberAuditEntry | TeamRemoveRepositoryAuditEntry | Topic | TransferredEvent | Tree | UnassignedEvent | UnlabeledEvent | UnlockedEvent | UnmarkedAsDuplicateEvent | UnpinnedEvent | UnsubscribedEvent | User | UserBlockedEvent | UserContentEdit | UserStatus | VerifiableDomain | Workflow | WorkflowRun | WorkflowRunFile>>;
   /** Lookup a organization by login. */
   organization?: Maybe<Organization>;
   /** The client's rate limit information. */
@@ -18039,7 +18126,7 @@ export type Query = {
   /** Lookup a repository owner (ie. either a User or an Organization) by login. */
   repositoryOwner?: Maybe<Organization | User>;
   /** Lookup resource by a URL. */
-  resource?: Maybe<Bot | CheckRun | ClosedEvent | Commit | ConvertToDraftEvent | CrossReferencedEvent | Gist | Issue | Mannequin | MergedEvent | Milestone | Organization | PullRequest | PullRequestCommit | ReadyForReviewEvent | Release | Repository | RepositoryTopic | ReviewDismissedEvent | TeamDiscussion | TeamDiscussionComment | User | Workflow | WorkflowRun>;
+  resource?: Maybe<Bot | CheckRun | ClosedEvent | Commit | ConvertToDraftEvent | CrossReferencedEvent | Gist | Issue | Mannequin | MergedEvent | Milestone | Organization | PullRequest | PullRequestCommit | ReadyForReviewEvent | Release | Repository | RepositoryTopic | ReviewDismissedEvent | TeamDiscussion | TeamDiscussionComment | User | Workflow | WorkflowRun | WorkflowRunFile>;
   /** Perform a search across resources, returning a maximum of 1,000 results. */
   search: SearchResultItemConnection;
   /** GitHub Security Advisories */
@@ -22306,6 +22393,12 @@ export type RuleBypassMode =
   | 'NONE'
   /** Those with bypass permission at the organization level can bypass */
   | 'ORGANIZATION'
+  /** Those with bypass permission at the organization level can always bypass */
+  | 'ORGANIZATION_ALWAYS'
+  /** Bypassing is disabled */
+  | 'ORGANIZATION_NONE'
+  /** Those with bypass permission at the organization level can bypass for pull requests only */
+  | 'ORGANIZATION_PRS_ONLY'
   /** Those with bypass permission at the repository level can bypass */
   | 'REPOSITORY';
 
@@ -26019,6 +26112,23 @@ export type UnmarkIssueAsDuplicatePayload = {
   duplicate?: Maybe<IssueOrPullRequest>;
 };
 
+/** Autogenerated input type of UnmarkProjectV2AsTemplate */
+export type UnmarkProjectV2AsTemplateInput = {
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The ID of the Project to unmark as a template. */
+  projectId: Scalars['ID'];
+};
+
+/** Autogenerated return type of UnmarkProjectV2AsTemplate */
+export type UnmarkProjectV2AsTemplatePayload = {
+  __typename?: 'UnmarkProjectV2AsTemplatePayload';
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: Maybe<Scalars['String']>;
+  /** The project. */
+  projectV2?: Maybe<ProjectV2>;
+};
+
 /** Represents an 'unmarked_as_duplicate' event on a given issue or pull request. */
 export type UnmarkedAsDuplicateEvent = Node & {
   __typename?: 'UnmarkedAsDuplicateEvent';
@@ -26939,6 +27049,34 @@ export type UpdateProjectPayload = {
   clientMutationId?: Maybe<Scalars['String']>;
   /** The updated project. */
   project?: Maybe<Project>;
+};
+
+/** Autogenerated input type of UpdateProjectV2Collaborators */
+export type UpdateProjectV2CollaboratorsInput = {
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: InputMaybe<Scalars['String']>;
+  /** The collaborators to update. */
+  collaborators: Array<ProjectV2Collaborator>;
+  /** The ID of the project to update the collaborators for. */
+  projectId: Scalars['ID'];
+};
+
+/** Autogenerated return type of UpdateProjectV2Collaborators */
+export type UpdateProjectV2CollaboratorsPayload = {
+  __typename?: 'UpdateProjectV2CollaboratorsPayload';
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: Maybe<Scalars['String']>;
+  /** The collaborators granted a role */
+  collaborators?: Maybe<ProjectV2ActorConnection>;
+};
+
+
+/** Autogenerated return type of UpdateProjectV2Collaborators */
+export type UpdateProjectV2CollaboratorsPayloadCollaboratorsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
 };
 
 /** Autogenerated input type of UpdateProjectV2DraftIssue */
@@ -28346,6 +28484,8 @@ export type WorkflowRun = Node & UniformResourceLocatable & {
   deploymentReviews: DeploymentReviewConnection;
   /** The event that triggered the workflow run */
   event: Scalars['String'];
+  /** The workflow file */
+  file?: Maybe<WorkflowRunFile>;
   id: Scalars['ID'];
   /** The pending deployment requests of all check runs in this workflow run */
   pendingDeploymentRequests: DeploymentRequestConnection;
@@ -28399,6 +28539,28 @@ export type WorkflowRunEdge = {
   cursor: Scalars['String'];
   /** The item at the end of the edge. */
   node?: Maybe<WorkflowRun>;
+};
+
+/** An executed workflow file for a workflow run. */
+export type WorkflowRunFile = Node & UniformResourceLocatable & {
+  __typename?: 'WorkflowRunFile';
+  id: Scalars['ID'];
+  /** The path of the workflow file relative to its repository. */
+  path: Scalars['String'];
+  /** The direct link to the file in the repository which stores the workflow file. */
+  repositoryFileUrl: Scalars['URI'];
+  /** The repository name and owner which stores the workflow file. */
+  repositoryName: Scalars['URI'];
+  /** The HTTP path for this workflow run file */
+  resourcePath: Scalars['URI'];
+  /** The parent workflow run execution for this file. */
+  run: WorkflowRun;
+  /** The HTTP URL for this workflow run file */
+  url: Scalars['URI'];
+  /** If the viewer has permissions to push to the repository which stores the workflow. */
+  viewerCanPushRepository: Scalars['Boolean'];
+  /** If the viewer has permissions to read the repository which stores the workflow. */
+  viewerCanReadRepository: Scalars['Boolean'];
 };
 
 /** Ways in which lists of workflow runs can be ordered upon return. */
