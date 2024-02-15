@@ -15486,6 +15486,11 @@ enum FundingPlatform {
   PATREON
 
   """
+  Polar funding platform.
+  """
+  POLAR
+
+  """
   Tidelift funding platform.
   """
   TIDELIFT
@@ -24165,7 +24170,102 @@ type OrgBlockUserAuditEntry implements AuditEntry & Node & OrganizationAuditEntr
   operationType: OperationType
 
   """
+  The Node ID of the OrgBlockUserAuditEntry object
+  """
+  id: ID!
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
   The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The HTTP path for the organization
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The user affected by the action
+  """
+  user: User
+
+  """
+  For actions involving two users, the actor is the initiator and the user is the affected user.
+  """
+  userLogin: String
+
+  """
+  The HTTP path for the user.
+  """
+  userResourcePath: URI
+
+  """
+  The HTTP URL for the user.
+  """
+  userUrl: URI
+}
+
+"""
+Audit log entry for a org.config.disable_collaborators_only event.
+"""
+type OrgConfigDisableCollaboratorsOnlyAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+  """
+  The action name
+  """
+  action: String!
+
+  """
+  The user who initiated the action
+  """
+  actor: AuditEntryActor
+
+  """
+  The IP address of the actor
+  """
+  actorIp: String
+
+  """
+  A readable representation of the actor's location
+  """
+  actorLocation: ActorLocation
+
+  """
+  The username of the user who initiated the action
+  """
+  actorLogin: String
+
+  """
+  The HTTP path for the actor.
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgConfigDisableCollaboratorsOnlyAuditEntry object
   """
   organization: Organization
 
@@ -26060,6 +26160,111 @@ type OrgRemoveMemberAuditEntry implements AuditEntry & Node & OrganizationAuditE
   actor: AuditEntryActor
 
   """
+  The Node ID of the OrgRemoveBillingManagerAuditEntry object
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgRemoveMemberAuditEntry object
+  """
+  id: ID!
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
+  The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The HTTP path for the organization
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The reason for the billing manager being removed.
+  """
+  reason: OrgRemoveBillingManagerAuditEntryReason
+
+  """
+  The user affected by the action
+  """
+  user: User
+
+  """
+  For actions involving two users, the actor is the initiator and the user is the affected user.
+  """
+  userLogin: String
+
+  """
+  The HTTP path for the user.
+  """
+  userResourcePath: URI
+
+  """
+  The HTTP URL for the user.
+  """
+  userUrl: URI
+}
+
+"""
+The reason a billing manager was removed from an Organization.
+"""
+enum OrgRemoveBillingManagerAuditEntryReason {
+  """
+  SAML external identity missing
+  """
+  SAML_EXTERNAL_IDENTITY_MISSING
+
+  """
+  SAML SSO enforcement requires an external identity
+  """
+  SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
+
+  """
+  The organization required 2FA of its billing managers and this user did not have 2FA enabled.
+  """
+  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
+}
+
+"""
+Audit log entry for a org.remove_member event.
+"""
+type OrgRemoveMemberAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+  """
+  The action name
+  """
+  action: String!
+
+  """
+  The user who initiated the action
+  """
+  actor: AuditEntryActor
+
+  """
   The IP address of the actor
   """
   actorIp: String
@@ -26729,7 +26934,7 @@ type OrgUpdateDefaultRepositoryPermissionAuditEntry implements AuditEntry & Node
   actorUrl: URI
 
   """
-  The time the action was initiated
+  The Node ID of the OrgUnblockUserAuditEntry object
   """
   createdAt: PreciseDateTime!
 
@@ -26764,16 +26969,6 @@ type OrgUpdateDefaultRepositoryPermissionAuditEntry implements AuditEntry & Node
   organizationUrl: URI
 
   """
-  The new base repository permission level for the organization.
-  """
-  permission: OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
-
-  """
-  The former base repository permission level for the organization.
-  """
-  permissionWas: OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
-
-  """
   The user affected by the action
   """
   user: User
@@ -26795,34 +26990,9 @@ type OrgUpdateDefaultRepositoryPermissionAuditEntry implements AuditEntry & Node
 }
 
 """
-The default permission a repository can have in an Organization.
+Audit log entry for a org.update_default_repository_permission
 """
-enum OrgUpdateDefaultRepositoryPermissionAuditEntryPermission {
-  """
-  Can read, clone, push, and add collaborators to repositories.
-  """
-  ADMIN
-
-  """
-  No default permission value.
-  """
-  NONE
-
-  """
-  Can read and clone repositories.
-  """
-  READ
-
-  """
-  Can read, clone and push to repositories.
-  """
-  WRITE
-}
-
-"""
-Audit log entry for a org.update_member event.
-"""
-type OrgUpdateMemberAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+type OrgUpdateDefaultRepositoryPermissionAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
   """
   The action name
   """
