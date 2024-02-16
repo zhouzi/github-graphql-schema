@@ -4,7 +4,7 @@
 
 ![Test](https://github.com/zhouzi/github-graphql-schema/workflows/Test/badge.svg)
 
-> ⚠️ This is a fork of [octokit/graphql-schema](https://github.com/octokit/graphql-schema) with automatic update enabled and fixes integrated. [Compare the fork with the origin to browse the differences.](https://github.com/octokit/graphql-schema/compare/master...zhouzi:master)
+> ⚠️ Update Feb 16 2024: [octokit/graphql-schema](https://github.com/octokit/graphql-schema) is back with automatic updates and bug fixes. There's no need to use this fork anymore, use the official channel instead.
 
 ## Usage
 
