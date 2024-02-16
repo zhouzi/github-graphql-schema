@@ -24165,12 +24165,22 @@ type OrgBlockUserAuditEntry implements AuditEntry & Node & OrganizationAuditEntr
   id: ID!
 
   """
+  The Node ID of the OrgBlockUserAuditEntry object
+  """
+  id: ID!
+
+  """
   The corresponding operation type for the action
   """
   operationType: OperationType
 
   """
   The Node ID of the OrgBlockUserAuditEntry object
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgConfigDisableCollaboratorsOnlyAuditEntry object
   """
   id: ID!
 
@@ -24265,6 +24275,11 @@ type OrgConfigDisableCollaboratorsOnlyAuditEntry implements AuditEntry & Node & 
   createdAt: PreciseDateTime!
 
   """
+  The Node ID of the OrgConfigEnableCollaboratorsOnlyAuditEntry object
+  """
+  id: ID!
+
+  """
   The Node ID of the OrgConfigDisableCollaboratorsOnlyAuditEntry object
   """
   organization: Organization
@@ -24351,6 +24366,11 @@ type OrgConfigDisableCollaboratorsOnlyAuditEntry implements AuditEntry & Node & 
 
   """
   The Node ID of the OrgConfigDisableCollaboratorsOnlyAuditEntry object
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgCreateAuditEntry object
   """
   id: ID!
 
@@ -24445,7 +24465,7 @@ type OrgConfigEnableCollaboratorsOnlyAuditEntry implements AuditEntry & Node & O
   createdAt: PreciseDateTime!
 
   """
-  The Node ID of the OrgConfigEnableCollaboratorsOnlyAuditEntry object
+  The Node ID of the OrgDisableOauthAppRestrictionsAuditEntry object
   """
   id: ID!
 
@@ -24542,7 +24562,12 @@ type OrgCreateAuditEntry implements AuditEntry & Node & OrganizationAuditEntryDa
   """
   The time the action was initiated
   """
-  createdAt: PreciseDateTime!
+  digestMethodUrl: URI
+
+  """
+  The Node ID of the OrgDisableSamlAuditEntry object
+  """
+  id: ID!
 
   """
   The Node ID of the OrgCreateAuditEntry object
@@ -24597,246 +24622,6 @@ type OrgCreateAuditEntry implements AuditEntry & Node & OrganizationAuditEntryDa
 
 """
 The billing plans available for organizations.
-"""
-enum OrgCreateAuditEntryBillingPlan {
-  """
-  Team Plan
-  """
-  BUSINESS
-
-  """
-  Enterprise Cloud Plan
-  """
-  BUSINESS_PLUS
-
-  """
-  Free Plan
-  """
-  FREE
-
-  """
-  Tiered Per Seat Plan
-  """
-  TIERED_PER_SEAT
-
-  """
-  Legacy Unlimited Plan
-  """
-  UNLIMITED
-}
-
-"""
-Audit log entry for a org.disable_oauth_app_restrictions event.
-"""
-type OrgDisableOauthAppRestrictionsAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
-  """
-  The action name
-  """
-  action: String!
-
-  """
-  The user who initiated the action
-  """
-  actor: AuditEntryActor
-
-  """
-  The IP address of the actor
-  """
-  actorIp: String
-
-  """
-  A readable representation of the actor's location
-  """
-  actorLocation: ActorLocation
-
-  """
-  The username of the user who initiated the action
-  """
-  actorLogin: String
-
-  """
-  The HTTP path for the actor.
-  """
-  actorResourcePath: URI
-
-  """
-  The HTTP URL for the actor.
-  """
-  actorUrl: URI
-
-  """
-  The time the action was initiated
-  """
-  createdAt: PreciseDateTime!
-
-  """
-  The Node ID of the OrgDisableOauthAppRestrictionsAuditEntry object
-  """
-  id: ID!
-
-  """
-  The corresponding operation type for the action
-  """
-  operationType: OperationType
-
-  """
-  The Organization associated with the Audit Entry.
-  """
-  organization: Organization
-
-  """
-  The name of the Organization.
-  """
-  organizationName: String
-
-  """
-  The HTTP path for the organization
-  """
-  organizationResourcePath: URI
-
-  """
-  The HTTP URL for the organization
-  """
-  organizationUrl: URI
-
-  """
-  The user affected by the action
-  """
-  user: User
-
-  """
-  For actions involving two users, the actor is the initiator and the user is the affected user.
-  """
-  userLogin: String
-
-  """
-  The HTTP path for the user.
-  """
-  userResourcePath: URI
-
-  """
-  The HTTP URL for the user.
-  """
-  userUrl: URI
-}
-
-"""
-Audit log entry for a org.disable_saml event.
-"""
-type OrgDisableSamlAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
-  """
-  The action name
-  """
-  action: String!
-
-  """
-  The user who initiated the action
-  """
-  actor: AuditEntryActor
-
-  """
-  The IP address of the actor
-  """
-  actorIp: String
-
-  """
-  A readable representation of the actor's location
-  """
-  actorLocation: ActorLocation
-
-  """
-  The username of the user who initiated the action
-  """
-  actorLogin: String
-
-  """
-  The HTTP path for the actor.
-  """
-  actorResourcePath: URI
-
-  """
-  The HTTP URL for the actor.
-  """
-  actorUrl: URI
-
-  """
-  The time the action was initiated
-  """
-  createdAt: PreciseDateTime!
-
-  """
-  The SAML provider's digest algorithm URL.
-  """
-  digestMethodUrl: URI
-
-  """
-  The Node ID of the OrgDisableSamlAuditEntry object
-  """
-  id: ID!
-
-  """
-  The SAML provider's issuer URL.
-  """
-  issuerUrl: URI
-
-  """
-  The corresponding operation type for the action
-  """
-  operationType: OperationType
-
-  """
-  The Organization associated with the Audit Entry.
-  """
-  organization: Organization
-
-  """
-  The name of the Organization.
-  """
-  organizationName: String
-
-  """
-  The HTTP path for the organization
-  """
-  organizationResourcePath: URI
-
-  """
-  The HTTP URL for the organization
-  """
-  organizationUrl: URI
-
-  """
-  The SAML provider's signature algorithm URL.
-  """
-  signatureMethodUrl: URI
-
-  """
-  The SAML provider's single sign-on URL.
-  """
-  singleSignOnUrl: URI
-
-  """
-  The user affected by the action
-  """
-  user: User
-
-  """
-  For actions involving two users, the actor is the initiator and the user is the affected user.
-  """
-  userLogin: String
-
-  """
-  The HTTP path for the user.
-  """
-  userResourcePath: URI
-
-  """
-  The HTTP URL for the user.
-  """
-  userUrl: URI
-}
-
-"""
-Audit log entry for a org.disable_two_factor_requirement event.
 """
 type OrgDisableTwoFactorRequirementAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
   """
@@ -24905,35 +24690,35 @@ type OrgDisableTwoFactorRequirementAuditEntry implements AuditEntry & Node & Org
   organizationResourcePath: URI
 
   """
-  The HTTP URL for the organization
+  Team Plan
   """
-  organizationUrl: URI
+  BUSINESS
 
   """
-  The user affected by the action
+  Enterprise Cloud Plan
   """
-  user: User
+  BUSINESS_PLUS
 
   """
-  For actions involving two users, the actor is the initiator and the user is the affected user.
+  Free Plan
   """
-  userLogin: String
+  FREE
 
   """
-  The HTTP path for the user.
+  Tiered Per Seat Plan
   """
-  userResourcePath: URI
+  TIERED_PER_SEAT
 
   """
-  The HTTP URL for the user.
+  Legacy Unlimited Plan
   """
-  userUrl: URI
+  UNLIMITED
 }
 
 """
-Audit log entry for a org.enable_oauth_app_restrictions event.
+Audit log entry for a org.disable_oauth_app_restrictions event.
 """
-type OrgEnableOauthAppRestrictionsAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+type OrgDisableOauthAppRestrictionsAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
   """
   The action name
   """
@@ -25026,9 +24811,9 @@ type OrgEnableOauthAppRestrictionsAuditEntry implements AuditEntry & Node & Orga
 }
 
 """
-Audit log entry for a org.enable_saml event.
+Audit log entry for a org.disable_saml event.
 """
-type OrgEnableSamlAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+type OrgDisableSamlAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
   """
   The action name
   """
@@ -25141,6 +24926,321 @@ type OrgEnableSamlAuditEntry implements AuditEntry & Node & OrganizationAuditEnt
 }
 
 """
+Audit log entry for a org.disable_two_factor_requirement event.
+"""
+type OrgDisableTwoFactorRequirementAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+  """
+  The action name
+  """
+  action: String!
+
+  """
+  The user who initiated the action
+  """
+  actor: AuditEntryActor
+
+  """
+  The IP address of the actor
+  """
+  actorIp: String
+
+  """
+  A readable representation of the actor's location
+  """
+  actorLocation: ActorLocation
+
+  """
+  The username of the user who initiated the action
+  """
+  actorLogin: String
+
+  """
+  The HTTP path for the actor.
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgEnableTwoFactorRequirementAuditEntry object
+  """
+  id: ID!
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
+  The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The HTTP path for the organization
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The user affected by the action
+  """
+  user: User
+
+  """
+  For actions involving two users, the actor is the initiator and the user is the affected user.
+  """
+  userLogin: String
+
+  """
+  The HTTP path for the user.
+  """
+  userResourcePath: URI
+
+  """
+  The HTTP URL for the user.
+  """
+  userUrl: URI
+}
+
+"""
+Audit log entry for a org.enable_oauth_app_restrictions event.
+"""
+type OrgEnableOauthAppRestrictionsAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+  """
+  The action name
+  """
+  action: String!
+
+  """
+  The user who initiated the action
+  """
+  actor: AuditEntryActor
+
+  """
+  The IP address of the actor
+  """
+  actorIp: String
+
+  """
+  A readable representation of the actor's location
+  """
+  actorLocation: ActorLocation
+
+  """
+  The username of the user who initiated the action
+  """
+  actorLogin: String
+
+  """
+  The HTTP path for the actor.
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgEnableOauthAppRestrictionsAuditEntry object
+  """
+  email: String
+
+  """
+  The Node ID of the OrgInviteMemberAuditEntry object
+  """
+  id: ID!
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
+  The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The HTTP path for the organization
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The user affected by the action
+  """
+  user: User
+
+  """
+  For actions involving two users, the actor is the initiator and the user is the affected user.
+  """
+  userLogin: String
+
+  """
+  The HTTP path for the user.
+  """
+  userResourcePath: URI
+
+  """
+  The HTTP URL for the user.
+  """
+  userUrl: URI
+}
+
+"""
+Audit log entry for a org.enable_saml event.
+"""
+type OrgEnableSamlAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+  """
+  The action name
+  """
+  action: String!
+
+  """
+  The user who initiated the action
+  """
+  actor: AuditEntryActor
+
+  """
+  The IP address of the actor
+  """
+  actorIp: String
+
+  """
+  A readable representation of the actor's location
+  """
+  actorLocation: ActorLocation
+
+  """
+  The username of the user who initiated the action
+  """
+  actorLogin: String
+
+  """
+  The HTTP path for the actor.
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The SAML provider's digest algorithm URL.
+  """
+  digestMethodUrl: URI
+
+  """
+  The Node ID of the OrgEnableSamlAuditEntry object
+  """
+  id: ID!
+
+  """
+  The SAML provider's issuer URL.
+  """
+  enterpriseUrl: URI
+
+  """
+  The Node ID of the OrgInviteToBusinessAuditEntry object
+  """
+  id: ID!
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
+  The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The HTTP path for the organization
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The SAML provider's signature algorithm URL.
+  """
+  signatureMethodUrl: URI
+
+  """
+  The SAML provider's single sign-on URL.
+  """
+  singleSignOnUrl: URI
+
+  """
+  The user affected by the action
+  """
+  user: User
+
+  """
+  For actions involving two users, the actor is the initiator and the user is the affected user.
+  """
+  userLogin: String
+
+  """
+  The HTTP path for the user.
+  """
+  userResourcePath: URI
+
+  """
+  The HTTP URL for the user.
+  """
+  userUrl: URI
+}
+
+"""
 Audit log entry for a org.enable_two_factor_requirement event.
 """
 type OrgEnableTwoFactorRequirementAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
@@ -25183,6 +25283,16 @@ type OrgEnableTwoFactorRequirementAuditEntry implements AuditEntry & Node & Orga
   The time the action was initiated
   """
   createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgOauthAppAccessApprovedAuditEntry object
+  """
+  id: ID!
+
+  """
+  The name of the OAuth application.
+  """
+  oauthApplicationName: String
 
   """
   The Node ID of the OrgEnableTwoFactorRequirementAuditEntry object
@@ -25305,6 +25415,11 @@ type OrgInviteMemberAuditEntry implements AuditEntry & Node & OrganizationAuditE
   createdAt: PreciseDateTime!
 
   """
+  The Node ID of the OrgOauthAppAccessBlockedAuditEntry object
+  """
+  id: ID!
+
+  """
   The email address of the organization invitation.
   """
   email: String
@@ -25408,6 +25523,11 @@ type OrgInviteToBusinessAuditEntry implements AuditEntry & EnterpriseAuditEntryD
   The time the action was initiated
   """
   createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgOauthAppAccessDeniedAuditEntry object
+  """
+  id: ID!
 
   """
   The HTTP path for this enterprise.
@@ -25520,7 +25640,7 @@ type OrgOauthAppAccessApprovedAuditEntry implements AuditEntry & Node & OauthApp
   createdAt: PreciseDateTime!
 
   """
-  The Node ID of the OrgOauthAppAccessApprovedAuditEntry object
+  The Node ID of the OrgOauthAppAccessRequestedAuditEntry object
   """
   id: ID!
 
@@ -25630,7 +25750,7 @@ type OrgOauthAppAccessBlockedAuditEntry implements AuditEntry & Node & OauthAppl
   createdAt: PreciseDateTime!
 
   """
-  The Node ID of the OrgOauthAppAccessBlockedAuditEntry object
+  The Node ID of the OrgOauthAppAccessUnblockedAuditEntry object
   """
   id: ID!
 
@@ -25740,7 +25860,7 @@ type OrgOauthAppAccessDeniedAuditEntry implements AuditEntry & Node & OauthAppli
   createdAt: PreciseDateTime!
 
   """
-  The Node ID of the OrgOauthAppAccessDeniedAuditEntry object
+  The Node ID of the OrgRemoveBillingManagerAuditEntry object
   """
   id: ID!
 
@@ -25850,7 +25970,7 @@ type OrgOauthAppAccessRequestedAuditEntry implements AuditEntry & Node & OauthAp
   createdAt: PreciseDateTime!
 
   """
-  The Node ID of the OrgOauthAppAccessRequestedAuditEntry object
+  The Node ID of the OrgRemoveMemberAuditEntry object
   """
   id: ID!
 
@@ -25920,7 +26040,10 @@ Audit log entry for a org.oauth_app_access_unblocked event.
 """
 type OrgOauthAppAccessUnblockedAuditEntry implements AuditEntry & Node & OauthApplicationAuditEntryData & OrganizationAuditEntryData {
   """
-  The action name
+  Organization owners have full access and can change several settings,
+  including the names of repositories that belong to the Organization and Owners
+  team membership. In addition, organization owners can delete the organization
+  and all of its repositories.
   """
   action: String!
 
@@ -26029,407 +26152,6 @@ type OrgOauthAppAccessUnblockedAuditEntry implements AuditEntry & Node & OauthAp
 Audit log entry for a org.remove_billing_manager event.
 """
 type OrgRemoveBillingManagerAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
-  """
-  The action name
-  """
-  action: String!
-
-  """
-  The user who initiated the action
-  """
-  actor: AuditEntryActor
-
-  """
-  The IP address of the actor
-  """
-  actorIp: String
-
-  """
-  A readable representation of the actor's location
-  """
-  actorLocation: ActorLocation
-
-  """
-  The username of the user who initiated the action
-  """
-  actorLogin: String
-
-  """
-  The HTTP path for the actor.
-  """
-  actorResourcePath: URI
-
-  """
-  The HTTP URL for the actor.
-  """
-  actorUrl: URI
-
-  """
-  The time the action was initiated
-  """
-  createdAt: PreciseDateTime!
-
-  """
-  The Node ID of the OrgRemoveBillingManagerAuditEntry object
-  """
-  id: ID!
-
-  """
-  The corresponding operation type for the action
-  """
-  operationType: OperationType
-
-  """
-  The Organization associated with the Audit Entry.
-  """
-  organization: Organization
-
-  """
-  The name of the Organization.
-  """
-  organizationName: String
-
-  """
-  The HTTP path for the organization
-  """
-  organizationResourcePath: URI
-
-  """
-  The HTTP URL for the organization
-  """
-  organizationUrl: URI
-
-  """
-  The reason for the billing manager being removed.
-  """
-  reason: OrgRemoveBillingManagerAuditEntryReason
-
-  """
-  The user affected by the action
-  """
-  user: User
-
-  """
-  For actions involving two users, the actor is the initiator and the user is the affected user.
-  """
-  userLogin: String
-
-  """
-  The HTTP path for the user.
-  """
-  userResourcePath: URI
-
-  """
-  The HTTP URL for the user.
-  """
-  userUrl: URI
-}
-
-"""
-The reason a billing manager was removed from an Organization.
-"""
-enum OrgRemoveBillingManagerAuditEntryReason {
-  """
-  SAML external identity missing
-  """
-  SAML_EXTERNAL_IDENTITY_MISSING
-
-  """
-  SAML SSO enforcement requires an external identity
-  """
-  SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
-
-  """
-  The organization required 2FA of its billing managers and this user did not have 2FA enabled.
-  """
-  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
-}
-
-"""
-Audit log entry for a org.remove_member event.
-"""
-type OrgRemoveMemberAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
-  """
-  The action name
-  """
-  action: String!
-
-  """
-  The user who initiated the action
-  """
-  actor: AuditEntryActor
-
-  """
-  The Node ID of the OrgRemoveBillingManagerAuditEntry object
-  """
-  actorResourcePath: URI
-
-  """
-  The HTTP URL for the actor.
-  """
-  actorUrl: URI
-
-  """
-  The time the action was initiated
-  """
-  createdAt: PreciseDateTime!
-
-  """
-  The Node ID of the OrgRemoveMemberAuditEntry object
-  """
-  id: ID!
-
-  """
-  The corresponding operation type for the action
-  """
-  operationType: OperationType
-
-  """
-  The Organization associated with the Audit Entry.
-  """
-  organization: Organization
-
-  """
-  The name of the Organization.
-  """
-  organizationName: String
-
-  """
-  The HTTP path for the organization
-  """
-  organizationResourcePath: URI
-
-  """
-  The HTTP URL for the organization
-  """
-  organizationUrl: URI
-
-  """
-  The reason for the billing manager being removed.
-  """
-  reason: OrgRemoveBillingManagerAuditEntryReason
-
-  """
-  The user affected by the action
-  """
-  user: User
-
-  """
-  For actions involving two users, the actor is the initiator and the user is the affected user.
-  """
-  userLogin: String
-
-  """
-  The HTTP path for the user.
-  """
-  userResourcePath: URI
-
-  """
-  The HTTP URL for the user.
-  """
-  userUrl: URI
-}
-
-"""
-The reason a billing manager was removed from an Organization.
-"""
-enum OrgRemoveBillingManagerAuditEntryReason {
-  """
-  SAML external identity missing
-  """
-  SAML_EXTERNAL_IDENTITY_MISSING
-
-  """
-  SAML SSO enforcement requires an external identity
-  """
-  SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
-
-  """
-  The organization required 2FA of its billing managers and this user did not have 2FA enabled.
-  """
-  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
-}
-
-"""
-Audit log entry for a org.remove_member event.
-"""
-type OrgRemoveMemberAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
-  """
-  The action name
-  """
-  action: String!
-
-  """
-  The user who initiated the action
-  """
-  actor: AuditEntryActor
-
-  """
-  The IP address of the actor
-  """
-  actorIp: String
-
-  """
-  A readable representation of the actor's location
-  """
-  actorLocation: ActorLocation
-
-  """
-  The username of the user who initiated the action
-  """
-  actorLogin: String
-
-  """
-  The HTTP path for the actor.
-  """
-  actorResourcePath: URI
-
-  """
-  The HTTP URL for the actor.
-  """
-  actorUrl: URI
-
-  """
-  The time the action was initiated
-  """
-  createdAt: PreciseDateTime!
-
-  """
-  The Node ID of the OrgRemoveMemberAuditEntry object
-  """
-  id: ID!
-
-  """
-  The types of membership the member has with the organization.
-  """
-  membershipTypes: [OrgRemoveMemberAuditEntryMembershipType!]
-
-  """
-  The corresponding operation type for the action
-  """
-  operationType: OperationType
-
-  """
-  The Organization associated with the Audit Entry.
-  """
-  organization: Organization
-
-  """
-  The name of the Organization.
-  """
-  organizationName: String
-
-  """
-  The HTTP path for the organization
-  """
-  organizationResourcePath: URI
-
-  """
-  The HTTP URL for the organization
-  """
-  organizationUrl: URI
-
-  """
-  The reason for the member being removed.
-  """
-  reason: OrgRemoveMemberAuditEntryReason
-
-  """
-  The user affected by the action
-  """
-  user: User
-
-  """
-  For actions involving two users, the actor is the initiator and the user is the affected user.
-  """
-  userLogin: String
-
-  """
-  The HTTP path for the user.
-  """
-  userResourcePath: URI
-
-  """
-  The HTTP URL for the user.
-  """
-  userUrl: URI
-}
-
-"""
-The type of membership a user has with an Organization.
-"""
-enum OrgRemoveMemberAuditEntryMembershipType {
-  """
-  Organization owners have full access and can change several settings,
-  including the names of repositories that belong to the Organization and Owners
-  team membership. In addition, organization owners can delete the organization
-  and all of its repositories.
-  """
-  ADMIN
-
-  """
-  A billing manager is a user who manages the billing settings for the Organization, such as updating payment information.
-  """
-  BILLING_MANAGER
-
-  """
-  A direct member is a user that is a member of the Organization.
-  """
-  DIRECT_MEMBER
-
-  """
-  An outside collaborator is a person who isn't explicitly a member of the
-  Organization, but who has Read, Write, or Admin permissions to one or more
-  repositories in the organization.
-  """
-  OUTSIDE_COLLABORATOR
-
-  """
-  A suspended member.
-  """
-  SUSPENDED
-
-  """
-  An unaffiliated collaborator is a person who is not a member of the
-  Organization and does not have access to any repositories in the Organization.
-  """
-  UNAFFILIATED
-}
-
-"""
-The reason a member was removed from an Organization.
-"""
-enum OrgRemoveMemberAuditEntryReason {
-  """
-  SAML external identity missing
-  """
-  SAML_EXTERNAL_IDENTITY_MISSING
-
-  """
-  SAML SSO enforcement requires an external identity
-  """
-  SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
-
-  """
-  User was removed from organization during account recovery
-  """
-  TWO_FACTOR_ACCOUNT_RECOVERY
-
-  """
-  The organization required 2FA of its billing managers and this user did not have 2FA enabled.
-  """
-  TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
-
-  """
-  User account has been deleted
-  """
-  USER_ACCOUNT_DELETED
-}
-
-"""
-Audit log entry for a org.remove_outside_collaborator event.
-"""
-type OrgRemoveOutsideCollaboratorAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
   """
   The action name
   """
@@ -26845,6 +26567,101 @@ type OrgUnblockUserAuditEntry implements AuditEntry & Node & OrganizationAuditEn
 
   """
   The Node ID of the OrgUnblockUserAuditEntry object
+  """
+  id: ID!
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
+  The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The Node ID of the OrgUnblockUserAuditEntry object
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The user affected by the action
+  """
+  user: User
+
+  """
+  For actions involving two users, the actor is the initiator and the user is the affected user.
+  """
+  userLogin: String
+
+  """
+  The HTTP path for the user.
+  """
+  userResourcePath: URI
+
+  """
+  The HTTP URL for the user.
+  """
+  userUrl: URI
+}
+
+"""
+Audit log entry for a org.update_default_repository_permission
+"""
+type OrgUpdateDefaultRepositoryPermissionAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData {
+  """
+  The action name
+  """
+  action: String!
+
+  """
+  The user who initiated the action
+  """
+  actor: AuditEntryActor
+
+  """
+  The IP address of the actor
+  """
+  actorIp: String
+
+  """
+  A readable representation of the actor's location
+  """
+  actorLocation: ActorLocation
+
+  """
+  The username of the user who initiated the action
+  """
+  actorLogin: String
+
+  """
+  The HTTP path for the actor.
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the OrgUpdateDefaultRepositoryPermissionAuditEntry object
   """
   id: ID!
 
@@ -41165,9 +40982,9 @@ type RepoConfigEnableCollaboratorsOnlyAuditEntry implements AuditEntry & Node & 
 }
 
 """
-Audit log entry for a repo.config.enable_contributors_only event.
+Audit log entry for a repo.config.enable_sockpuppet_disallowed event.
 """
-type RepoConfigEnableContributorsOnlyAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData {
+type RepoConfigEnableSockpuppetDisallowedAuditEntry implements AuditEntry & Node & OrganizationAuditEntryData & RepositoryAuditEntryData {
   """
   The action name
   """
@@ -41214,10 +41031,7 @@ type RepoConfigEnableContributorsOnlyAuditEntry implements AuditEntry & Node & O
   id: ID!
 
   """
-  The corresponding operation type for the action
-  """
-  operationType: OperationType
-
+  The Node ID of the RepoConfigEnableSockpuppetDisallowedAuditEntry object
   """
   The Organization associated with the Audit Entry.
   """
@@ -52674,6 +52488,76 @@ type TeamAddRepositoryAuditEntry implements AuditEntry & Node & OrganizationAudi
   teamResourcePath: URI
 
   """
+  The Node ID of the TeamAddRepositoryAuditEntry object
+  """
+  id: ID!
+
+  """
+  Whether the team was mapped to an LDAP Group.
+  """
+  isLdapMapped: Boolean
+
+  """
+  The corresponding operation type for the action
+  """
+  operationType: OperationType
+
+  """
+  The Organization associated with the Audit Entry.
+  """
+  organization: Organization
+
+  """
+  The name of the Organization.
+  """
+  organizationName: String
+
+  """
+  The HTTP path for the organization
+  """
+  organizationResourcePath: URI
+
+  """
+  The HTTP URL for the organization
+  """
+  organizationUrl: URI
+
+  """
+  The repository associated with the action
+  """
+  repository: Repository
+
+  """
+  The name of the repository
+  """
+  repositoryName: String
+
+  """
+  The HTTP path for the repository
+  """
+  repositoryResourcePath: URI
+
+  """
+  The HTTP URL for the repository
+  """
+  repositoryUrl: URI
+
+  """
+  The team associated with the action
+  """
+  team: Team
+
+  """
+  The name of the team
+  """
+  teamName: String
+
+  """
+  The HTTP path for this team
+  """
+  teamResourcePath: URI
+
+  """
   The HTTP URL for this team
   """
   teamUrl: URI
@@ -52738,6 +52622,38 @@ type TeamChangeParentTeamAuditEntry implements AuditEntry & Node & OrganizationA
   """
   actor: AuditEntryActor
 
+  """
+  The IP address of the actor
+  """
+  actorIp: String
+
+  """
+  A readable representation of the actor's location
+  """
+  actorLocation: ActorLocation
+
+  """
+  The username of the user who initiated the action
+  """
+  actorLogin: String
+
+  """
+  The HTTP path for the actor.
+  """
+  actorResourcePath: URI
+
+  """
+  The HTTP URL for the actor.
+  """
+  actorUrl: URI
+
+  """
+  The time the action was initiated
+  """
+  createdAt: PreciseDateTime!
+
+  """
+  The Node ID of the TeamChangeParentTeamAuditEntry object
   """
   The IP address of the actor
   """
